@@ -1,3 +1,2 @@
 # utilities
-linux commands, vim, scripts tips, etc
-For reference
+Reference for linux commands, vim, scripts tips, etc
