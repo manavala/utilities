@@ -1,0 +1,3 @@
+"Search and replace between two string
+".* used as wildcard
+:%s/start_string.*end_string//
