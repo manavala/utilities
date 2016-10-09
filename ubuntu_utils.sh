@@ -42,3 +42,39 @@ install_clock() {
      echo "sudo apt-get install up-clock"
      #after installed use command "up-clock" 
 }
+
+ubuntu_cpu_cool() {
+#suppress unwanted gpe at startup
+#ref: http://askubuntu.com/questions/176565/why-does-kworker-cpu-usage-get-so-high
+Instead I think this CPU usage is not normal and is related to the well-known kworker bug: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/887793
+
+The solution for me and for many others was, first of all, find out the "gpe" that is causing the bad stuff with something like:
+
+grep . -r /sys/firmware/acpi/interrupts/
+and check for an high value (mine was gpe13 - with a value like 200K - so, you have to change it accordingly, if differs). After that:
+
+~ cp /sys/firmware/acpi/interrupts/gpe13 /pathtobackup
+~ crontab -e
+Add this line, so it will be executed every startup/reboot:
+
+@reboot echo "disable" > /sys/firmware/acpi/interrupts/gpe13
+Save/exit. Then, to make it work also after wakeup from suspend:
+
+~ touch /etc/pm/sleep.d/30_disable_gpe13
+~ chmod +x /etc/pm/sleep.d/30_disable_gpe13
+~ vim /etc/pm/sleep.d/30_disable_gpe13
+Add this stuff:
+
+#!/bin/bash
+case "$1" in
+    thaw|resume)
+        echo disable > /sys/firmware/acpi/interrupts/gpe13 2>/dev/null
+        ;;
+    *)
+        ;;
+esac
+exit $?
+Save/exit, done.
+
+-- Ubuntu 12.10 on Samsung Chronos 7 series - Model no. NP700Z7C --
+}
