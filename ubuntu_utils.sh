@@ -35,4 +35,10 @@ limit_internet_speed() {
      echo "For any more info: man wondershaper or man trickle"
 }
 
-
+install_clock() {
+     #There’s a PPA contains the packages for this app, available for Ubuntu 12.04, Ubuntu 14.04, Ubuntu 15.04.
+     echo "sudo add-apt-repository ppa:apandada1/up-clock"
+     echo "sudo apt-get update"
+     echo "sudo apt-get install up-clock"
+     #after installed use command "up-clock" 
+}
