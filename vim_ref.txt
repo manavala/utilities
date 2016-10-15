@@ -1,0 +1,5 @@
+#Delete range of lines
+:3,10d (delets lines from 3 to 10)
+
+#Substitute range of lines
+:3,10s/old_test/new_test/ (change test between the lines 3 and 10)
