@@ -3,3 +3,25 @@
 
 #Substitute range of lines
 :3,10s/old_test/new_test/ (change test between the lines 3 and 10)
+
+#ranges
+:21 (@21th line)
+:1 (@1st line)
+:$ (only last line)
+:. (current line)
+:% (all lines)
+:21,$ (from 21 to end of file)
+:.,$ (from current line to end of file)
+:.+1,$ (line after current to end of file)
+:.,.5 or :.,.+5 (both are same, current line to plus 5 lines)
+
+#To replace first character
+:%s/^/char_str_to_replace/
+/^ (highlight first character of all lines in a file)
+
+#To replaec last character
+:%s/$/char_str_to_replace/
+/$ (highlight last charcater of all lines in a file)
+
+#Sort
+:sort
