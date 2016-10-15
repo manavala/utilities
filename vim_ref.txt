@@ -25,3 +25,10 @@
 
 #Sort
 :sort
+
+#copy lines with ranges
+:1,2y
+#copy and paste at cursor
+:1,2t.
+#copy and paste after 4 lines from cursor
+:1,2t5
