@@ -22,7 +22,6 @@ Ctrl+U It cut everything from the line start to cursor
 Ctrl+K It cut everything from the cursor to end of the line
 Ctrl+W It cut the current word before the cursor
 Ctrl+Y It paste the previous cut text
-CTRL+k It cut the line from the position of the cursor to the end of the line.
 CTRL+SHIFT+c To copy selected text
 CTRL+SHIFT+v To paste you last copied by CTRL+SHIFT+c
 SHIFT + INSERT Copy selected text to clipboard and paste from the clipboard
