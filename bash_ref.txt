@@ -1,1 +1,4 @@
 #References for bash commands
+
+#Read line by line
+while read -r line; do echo $line; done < file_name
