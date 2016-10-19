@@ -3,3 +3,4 @@
 sed 's/.*string//' #search are remove all string from starting of line to match string
 sed 's/string*.//' #search are remove all string from match string to end of line
 sed 's/old_str/new_str/g' #general command to search and replace for all occurances in a file
+sed '/cdef/r add.txt' input.txt #insert lines from "add.txt" to the file "input.txt" after the string "cdef"
