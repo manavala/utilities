@@ -6,3 +6,9 @@ sed 's/old_str/new_str/g' #general command to search and replace for all occuran
 sed '/cdef/r add.txt' input.txt #insert lines from "add.txt" to the file "input.txt" after the string "cdef"
 sed '/pattern/d' file #delete lines that matches with the pattern
 sed '2d' file # delete 2nd line
+sed 'n; d' infile > outputfile #Remove ODD lines
+sed '1d; n; d' infile > outputfile #  remove EVEN lines only
+
+
+awk:
+awk 'NR%2==0' infile > outfile # remove line no % 2 == 0
