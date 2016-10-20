@@ -32,3 +32,9 @@
 :1,2t.
 #copy and paste after 4 lines from cursor
 :1,2t5
+
+#remove last character of all lines in a file
+:%s/.$//g
+
+#replace ^M with g
+:%s/^M/g
