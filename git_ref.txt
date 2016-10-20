@@ -1,1 +1,2 @@
 #References for git commands
+git whatchanged #shows file list with commit history from newest
