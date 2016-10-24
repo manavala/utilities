@@ -34,3 +34,9 @@ Ctrl + D = exit
 fold -w20 infile.txt > out_file
 sed -e "s/.\{20\}/&\n/g" < temp.txt
 awk '$0=RT' RS='.{,20}' infile.txt > out_file
+
+#To split single line into multiles lines using delimiter ":"
+tr : \\n
+sed 's/:/\n/g'
+awk '{ gsub(":", "\n") } 1'
+while IFS=: read -ra line; do printf '%s\n' "${line[@]}"; done
