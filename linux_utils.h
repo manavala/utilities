@@ -40,3 +40,6 @@ tr : \\n
 sed 's/:/\n/g'
 awk '{ gsub(":", "\n") } 1'
 while IFS=: read -ra line; do printf '%s\n' "${line[@]}"; done
+grep -o '[^:]\+'
+awk -v RS='[:\n]' 1
+cut -d: --output-delimiter=$'\n' -f1-
