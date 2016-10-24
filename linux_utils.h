@@ -29,3 +29,8 @@ CTRL+z - kill
 Ctrl + T It swap the last two characters before the cursor
 Esc + T It swap the last two words before the cursor
 Ctrl + D = exit
+
+#To split single line into multiles after n characters
+fold -w20 infile.txt > out_file
+sed -e "s/.\{20\}/&\n/g" < temp.txt
+awk '$0=RT' RS='.{,20}' infile.txt > out_file
