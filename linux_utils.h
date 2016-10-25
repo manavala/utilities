@@ -43,3 +43,8 @@ while IFS=: read -ra line; do printf '%s\n' "${line[@]}"; done
 grep -o '[^:]\+'
 awk -v RS='[:\n]' 1
 cut -d: --output-delimiter=$'\n' -f1-
+
+
+#bash time in command prompt
+export TZ=Asia/Calcutta #for IST
+export PS1="\$(date +%I:%M:%S%p) \W]$"
