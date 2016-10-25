@@ -46,5 +46,5 @@ cut -d: --output-delimiter=$'\n' -f1-
 
 
 #bash time in command prompt
-export TZ=Asia/Calcutta #for IST
+export TZ=Asia/Calcutta #for IST # For others "ls /usr/share/zoneinfo/Asia/"
 export PS1="\$(date +%I:%M:%S%p) \W]$"
