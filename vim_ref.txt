@@ -38,3 +38,6 @@
 
 #replace ^M with g
 :%s/^M/g
+
+#search insert new line
+%s/search string/&\rnew code/
