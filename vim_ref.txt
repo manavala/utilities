@@ -40,4 +40,7 @@
 :%s/^M/g
 
 #search insert new line
-%s/search string/&\rnew code/
+:%s/search string/&\rnew code/
+
+#search and delete line
+:%g/pattern/d
