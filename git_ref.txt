@@ -1,2 +1,3 @@
 #References for git commands
 git whatchanged #shows file list with commit history from newest
+git show REVISION:path/to/file > new_file #to get file from particular revision
