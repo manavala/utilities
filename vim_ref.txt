@@ -47,3 +47,6 @@
 
 #reverse lines
 :g/^/move 0
+
+#delete odd lines
+:g/^/+d
