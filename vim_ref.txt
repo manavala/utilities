@@ -44,3 +44,6 @@
 
 #search and delete line
 :%g/pattern/d
+
+#reverse lines
+:g/^/move 0
