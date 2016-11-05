@@ -12,3 +12,6 @@ sed '1d; n; d' infile > outputfile #  remove EVEN lines only
 
 awk:
 awk 'NR%2==0' infile > outfile # remove line no % 2 == 0
+
+#recursive search and replace
+find . -type f -print0 | xargs -0 sed -i '/pattern/d'
