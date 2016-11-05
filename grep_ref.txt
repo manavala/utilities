@@ -3,7 +3,10 @@
 grep "string" * #general grep command
 -n => display line number
 -r,-R => recursive search
+-i => ignore case sensitive'
 
 grep "string" file_name | sed 's/old_str/new_str/' # first grep then apply sed then display final result
 
 grep "string" file_name | tail -1 #display  only the last occurance result
+
+grep "str0.*str1.*" filename #wildcard
