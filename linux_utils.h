@@ -65,3 +65,4 @@ cat /proc/cpuinfo #explins about each cores
 #get mem info
 free -m(in MB) -g(in GB)
 cat /proc/meminfo #explains available mem
+sudo dmidecode --type memory #From DMI
