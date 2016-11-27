@@ -66,3 +66,8 @@ cat /proc/cpuinfo #explins about each cores
 free -m(in MB) -g(in GB)
 cat /proc/meminfo #explains available mem
 sudo dmidecode --type memory #From DMI
+
+#Find and delete files
+find . -name ".svn" -exec rm -r "{}" \;
+find . -name ".svn" -type d -exec rm -r "{}" \; #delete only directories
+find . -name ".svn" -type d -empty -delete #delete if it is empty
