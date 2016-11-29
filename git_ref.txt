@@ -5,4 +5,4 @@ git reset HEAD^ #discard last commit without losing the changes
 
 #to copy changes from one workspace to another
 git diff > patch.txt
-git apply ~patch.txt
+git apply patch.txt
