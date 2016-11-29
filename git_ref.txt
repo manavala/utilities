@@ -2,3 +2,7 @@
 git whatchanged #shows file list with commit history from newest
 git show REVISION:path/to/file > new_file #to get file from particular revision
 git reset HEAD^ #discard last commit without losing the changes
+
+#to copy changes from one workspace to another
+git diff > patch.txt
+git apply ~patch.txt
