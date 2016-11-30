@@ -53,3 +53,7 @@
 
 #remove white space from current postition to next non-whitespace in currentline
 [set command line mode=Esc] dw
+
+
+#join range of lines
+:1, 10j
