@@ -50,3 +50,6 @@
 
 #delete odd lines
 :g/^/+d
+
+#remove white space from current postition to next non-whitespace in currentline
+[set command line mode=Esc] dw
