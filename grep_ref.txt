@@ -10,3 +10,5 @@ grep "string" file_name | sed 's/old_str/new_str/' # first grep then apply sed t
 grep "string" file_name | tail -1 #display  only the last occurance result
 
 grep "str0.*str1.*" filename #wildcard
+
+grep -A1 "str" filename# To get current and below line printed
