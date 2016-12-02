@@ -71,3 +71,8 @@ sudo dmidecode --type memory #From DMI
 find . -name ".svn" -exec rm -r "{}" \;
 find . -name ".svn" -type d -exec rm -r "{}" \; #delete only directories
 find . -name ".svn" -type d -empty -delete #delete if it is empty
+
+#Get memory map
+/proc/iomem
+/proc/opports
+/proc/vmallocinfo
