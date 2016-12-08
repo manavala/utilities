@@ -6,3 +6,6 @@ git reset HEAD^ #discard last commit without losing the changes
 #to copy changes from one workspace to another
 git diff > patch.txt
 git apply patch.txt
+
+#to copy changes between two commits
+git diff old_commit_hash new_commit_hash >patch.txt
