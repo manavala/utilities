@@ -23,6 +23,9 @@
 :%s/$/char_str_to_replace/
 /$ (highlight last charcater of all lines in a file)
 
+#To remove last character
+:%s/.$//g
+
 #Sort
 :sort
 
