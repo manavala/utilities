@@ -76,3 +76,7 @@ find . -name ".svn" -type d -empty -delete #delete if it is empty
 /proc/iomem
 /proc/opports
 /proc/vmallocinfo
+
+
+#To fix the default editor for the bash terminal
+select-editor
