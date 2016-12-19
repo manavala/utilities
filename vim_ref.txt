@@ -28,6 +28,7 @@
 
 #Sort
 :sort
+:%sort i #ignore case
 
 #copy lines with ranges
 :1,2y
