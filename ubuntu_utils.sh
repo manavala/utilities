@@ -78,3 +78,8 @@ Save/exit, done.
 
 -- Ubuntu 12.10 on Samsung Chronos 7 series - Model no. NP700Z7C --
 }
+
+
+#To avoid Gvim warning
+sudo apt-get -y remove vim-gnome
+sudo apt-get install vim-gtk
