@@ -80,3 +80,6 @@ find . -name ".svn" -type d -empty -delete #delete if it is empty
 
 #To fix the default editor for the bash terminal
 select-editor
+
+#Command line mode
+export PS1='\W]\$ '
