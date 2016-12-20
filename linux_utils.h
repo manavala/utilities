@@ -83,3 +83,7 @@ select-editor
 
 #Command line mode
 export PS1='\W]\$ '
+
+  
+#Terminal title
+PROMPT_COMMAND='echo -ne "\033]0; $USER@$HOSTNAME  ${PWD/}\007"'
