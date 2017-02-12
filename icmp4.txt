@@ -1,0 +1,7 @@
+#To sync latest
+p4 sync ...
+
+#to get list of modified files
+p4 diff -s -fa
+
+#
