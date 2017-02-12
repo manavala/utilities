@@ -2,6 +2,6 @@
 p4 sync ...
 
 #to get list of modified files
-p4 diff -s -fa
+p4 diff -f -sa
 
 #
