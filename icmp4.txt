@@ -29,4 +29,5 @@ p4 filelog file_path (or)
 p4 changes file_path
 
 #diff between same file and two versions
-p4 diff file_path#10 file_path#11
+p4 diff file_path#10 file_path#11 #runs in client side, can be used to compare with unsubmitted/local changes
+p4 diff2 file_path#10 file_path#11 #runs in server and sends results
