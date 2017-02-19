@@ -24,5 +24,6 @@ p4 print FILENAME#VERSION
 7. Apply new changes to VERSION-1
 8. p4 submit  ///new VERSION
 
-
-#
+#to view File's changes
+p4 filelog file_path (or)
+p4 changes file_path
