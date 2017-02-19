@@ -27,3 +27,6 @@ p4 print FILENAME#VERSION
 #to view File's changes
 p4 filelog file_path (or)
 p4 changes file_path
+
+#diff between same file and two versions
+p4 diff file_path#10 file_path#11
