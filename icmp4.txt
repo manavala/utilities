@@ -1,6 +1,12 @@
 #To sync latest
 p4 sync ...
 
+#steps to push new changes
+1. p4 sync ... //make sure to sync latest to avoid conflicts and resolve
+2. p4 edit file_path  //apply changes
+3. p4 opened // make sure what are the files are opened that will be pushed
+4. p4 submit //Enter Description changes, save and push
+
 #to get list of modified files
 p4 diff -f -sa
 
