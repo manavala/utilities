@@ -1,5 +1,6 @@
 #To sync latest
-p4 sync ...
+p4 sync ... #sync in root path to sync all
+p4 sync //depot/project/folder/... # to synch particular folder only "..." represnts folder
 
 #steps to push new changes
 1. p4 sync ... //make sure to sync latest to avoid conflicts and resolve
