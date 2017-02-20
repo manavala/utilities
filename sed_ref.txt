@@ -9,6 +9,9 @@ sed '2d' file # delete 2nd line
 sed 'n; d' infile > outputfile #Remove ODD lines
 sed '1d; n; d' infile > outputfile #  remove EVEN lines only
 
+#To insert new line after match
+sed '/pattern/a \new_line_string' file #a--> for append
+sed '/pattern/i \new_line_string' file #i--> insert line before match
 
 awk:
 awk 'NR%2==0' infile > outfile # remove line no % 2 == 0
