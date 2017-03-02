@@ -54,3 +54,6 @@ p4 move from_file to_file ### move (or) rename are alias
 
 #to checkout a file
 p4 edit filename
+
+#to revert opened files
+p4 revert
