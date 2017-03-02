@@ -38,3 +38,16 @@ p4 changes file_path
 #diff between same file and two versions
 p4 diff file_path#10 file_path#11 #runs in client side, can be used to compare with unsubmitted/local changes
 p4 diff2 file_path#10 file_path#11 #runs in server and sends results
+
+#To delete a file
+method1:
+p4 delete filename
+p4 submit
+
+method2:
+p4 edit filename
+delete file locally
+p4 submit
+
+#To rename file
+p4 move from_file to_file ### move (or) rename are alias
