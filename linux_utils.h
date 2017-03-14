@@ -80,6 +80,8 @@ find . -name ".svn" -type d -empty -delete #delete if it is empty
 
 #To fix the default editor for the bash terminal
 select-editor
+or export EDITOR="vim"
+set EDITOR "vim"
 
 #Command line mode
 export PS1='\W]\$ '
@@ -87,3 +89,6 @@ export PS1='\W]\$ '
   
 #Terminal title
 PROMPT_COMMAND='echo -ne "\033]0; $USER@$HOSTNAME  ${PWD/}\007"'
+ 
+#To return chmod of a file 
+stat --format '%a' $filename
