@@ -68,3 +68,13 @@
 
 #to remove or add menu/toolbar/sidebar
 :set go+=m,T,r,L (menu,tool,right,left) (+,-)
+
+
+### To open multiple files in existing session
+1. First add all the file names
+:argadd *.js
+
+2. Second open the files with format/view required from added files
+:argdo vs #vertical splits:
+:argdo sp #horizontal
+:argdo tabe #tabe
