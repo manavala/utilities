@@ -22,6 +22,8 @@ awk 'NR%2==0' infile > outfile # remove line no % 2 == 0
 #recursive search and replace
 find . -type f -print0 | xargs -0 sed -i '/pattern/d'
 
+#Insert at line number
+sed -i '8i This is Line 8' FILE ##insert at line number 8
 
 #delete first charater of file
 sed 's/^.//' file #1st character
