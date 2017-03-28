@@ -65,6 +65,10 @@
 #join range of lines
 :1, 10j
 
+#search string between two words
+/.*word1.*word2.* #highlight whole line
+/word1.*word2.*  #highlight from first word to end of line
+/.*word1.*word2  #highlight from start to second word
 
 #to remove or add menu/toolbar/sidebar
 :set go+=m,T,r,L (menu,tool,right,left) (+,-)
