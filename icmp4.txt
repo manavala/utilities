@@ -57,3 +57,7 @@ p4 edit filename
 
 #to revert opened files
 p4 revert
+
+
+#to compare directory files are checkedin or not
+#p4 unmanaged - . --> '.' current directory
