@@ -2,3 +2,6 @@
 
 #Read line by line
 while read -r line; do echo $line; done < file_name
+
+#read two lines line by line
+while read -r file && read -r chg <&3; do echo "$file $chg" ; done < file1 3<file2
