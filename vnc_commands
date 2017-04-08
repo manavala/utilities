@@ -1,2 +1,6 @@
 #command to add new resolution without "add new mode"
 vncserver -geometry 1280x964 -randr 1280x964 :61
+
+
+#More geometry resize options
+vncserver -geometry 1600x1200 -randr 1600x1200,1440x900,1024x768
