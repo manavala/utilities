@@ -92,3 +92,6 @@ PROMPT_COMMAND='echo -ne "\033]0; $USER@$HOSTNAME  ${PWD/}\007"'
  
 #To return chmod of a file 
 stat --format '%a' $filename
+
+#to remove swap files
+find ./ -type f -name "\.*sw[klmnop]" -delete
