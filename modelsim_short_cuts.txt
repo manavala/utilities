@@ -3,3 +3,5 @@ f   -   Full zoom
 o   -   Zoom out
 tab - successive level
 h   - Heirarchy signal names
+g   -  move active cursor
+i   -  zoom at centre window
