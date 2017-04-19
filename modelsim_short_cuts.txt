@@ -1,0 +1,5 @@
+c   -  cursor zoon
+f   -   Full zoom
+o   -   Zoom out
+tab - successive level
+h   - Heirarchy signal names
