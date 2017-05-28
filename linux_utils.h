@@ -95,3 +95,15 @@ stat --format '%a' $filename
 
 #to remove swap files
 find ./ -type f -name "\.*sw[klmnop]" -delete
+
+
+#to install pip
+1. Download from https://bootstrap.pypa.io/get-pip.py
+2. python get-pip.py
+3. pip install udemy-dl
+
+#(if instalation not succeded)
+pip install -U git+https://github.com/smeggingsmegger/udemy-dl.git@master
+
+#if not working/ or to update
+pip install --upgrade udemy-dl
