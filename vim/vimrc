@@ -156,7 +156,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 """ to change/indicate the cursor in insert/command mode
-:autocmd InsertEnter,InsertLeave * set cul!
+autocmd InsertEnter,InsertLeave * set cul!
 "other options
 ":autocmd InsertEnter * set cul
 ":autocmd InsertLeave * set nocul
