@@ -18,6 +18,7 @@
 #To replace first character
 :%s/^/char_str_to_replace/
 /^ (highlight first character of all lines in a file)
+:%s/^  / #removes first two charaters
 
 #To replaec last character
 :%s/$/char_str_to_replace/
