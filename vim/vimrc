@@ -161,5 +161,8 @@ autocmd InsertEnter,InsertLeave * set cul!
 ":autocmd InsertEnter * set cul
 ":autocmd InsertLeave * set nocul
 
+"vim cursor highlight
+hi CursorLine   cterm=NONE ctermbg=lightblue ctermfg=black
+
 
 "Add this line in ~/.bashrc ' export VIMINIT="source ~/.vimrc"  '
