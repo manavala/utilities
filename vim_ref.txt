@@ -16,7 +16,7 @@
 :.,.5 or :.,.+5 (both are same, current line to plus 5 lines)
 
 #To replace first character
-:%s/^/char_str_to_replace/
+:%s/^/char_str_to_insert/
 /^ (highlight first character of all lines in a file)
 :%s/^  / #removes first two charaters only if it is spaces
 :%normal 2x #removes first two charaters
