@@ -50,7 +50,7 @@ call s:InitVariable('g:indent_guides_auto_colors', 1)
 call s:InitVariable('g:indent_guides_color_change_percent', 10) " ie. 10%
 call s:InitVariable('g:indent_guides_guide_size', 1)
 call s:InitVariable('g:indent_guides_start_level', 1)
-call s:InitVariable('g:indent_guides_enable_on_vim_startup', 0)
+call s:InitVariable('g:indent_guides_enable_on_vim_startup', 1)
 call s:InitVariable('g:indent_guides_debug', 0)
 call s:InitVariable('g:indent_guides_space_guides', 1)
 call s:InitVariable('g:indent_guides_soft_pattern', '\s')
@@ -76,7 +76,7 @@ augroup indent_guides
   autocmd!
 
   if g:indent_guides_enable_on_vim_startup
-    autocmd VimEnter * :IndentGuidesEnable
+    autocmd VimEnter * :IndentGuidesDisable
   endif
 
   autocmd BufEnter,WinEnter,FileType * call indent_guides#process_autocmds()
