@@ -4,6 +4,7 @@ sed 's/.*string//' #search are remove all string from starting of line to match 
 sed 's/string*.//' #search are remove all string from match string to end of line
 sed 's/old_str/new_str/g' #general command to search and replace for all occurances in a file
 sed '/cdef/r add.txt' input.txt #insert lines from "add.txt" to the file "input.txt" after the string "cdef"
+sed -i '2r file1.txt' file2.txt # insert file at specific line
 sed '/pattern/d' file #delete lines that matches with the pattern
 sed '2d' file # delete 2nd line
 sed 'n; d' infile > outputfile #Remove ODD lines
@@ -30,3 +31,9 @@ sed -i '8i This is Line 8' FILE ##insert at line number 8
 sed 's/^.//' file #1st character
 sed 's/^..//' file #First 2 characters
 sed 's/^...//' file #first 3 characters
+
+## remove everything in between the () brackets
+sed -e '/(/{' -e ':loop;s/(.*)/()/;t;N;b loop' -e '}'   
+
+#remove contents inside including {}
+sed '/{/{:1;N;s/{.*}//;T1}' file
