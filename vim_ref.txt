@@ -86,3 +86,6 @@
 :argdo vs #vertical splits:
 :argdo sp #horizontal
 :argdo tabe #tabe
+
+### change tabs to spaces
+:retab
