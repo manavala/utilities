@@ -8,6 +8,7 @@ sed '/pattern/d' file #delete lines that matches with the pattern
 sed '2d' file # delete 2nd line
 sed 'n; d' infile > outputfile #Remove ODD lines
 sed '1d; n; d' infile > outputfile #  remove EVEN lines only
+sed '2,5d' #remove from line num 2 to 5
 
 #To insert new line after match
 sed '/pattern/a \new_line_string' file #a--> for append
