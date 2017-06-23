@@ -96,6 +96,13 @@ stat --format '%a' $filename
 #to remove swap files
 find ./ -type f -name "\.*sw[klmnop]" -delete
 
+#to remove duplicate lines in output
+uniq
+
+#to change rows to col
+xargs
+tr '\n' ' '
+
 
 #to install pip
 1. Download from https://bootstrap.pypa.io/get-pip.py
