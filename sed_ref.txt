@@ -37,3 +37,6 @@ sed -e '/(/{' -e ':loop;s/(.*)/()/;t;N;b loop' -e '}'
 
 #remove contents inside including {}
 sed '/{/{:1;N;s/{.*}//;T1}' file
+
+#search for "byte sequence {" from that point to next "}", deletes everything
+sed 'byte sequence /{:a;N;/\}/d;ba}' file
