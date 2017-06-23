@@ -40,3 +40,6 @@ sed '/{/{:1;N;s/{.*}//;T1}' file
 
 #search for "byte sequence {" from that point to next "}", deletes everything
 sed 'byte sequence /{:a;N;/\}/d;ba}' file
+
+#remove lines from beginning to pattern matching ( only in bash it is working, tcsh uses previous command)
+sed '/sweet/,$!d' file
