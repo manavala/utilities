@@ -162,7 +162,7 @@ autocmd InsertEnter,InsertLeave * set cul!
 ":autocmd InsertLeave * set nocul
 
 "vim cursor highlight
-hi CursorLine   cterm=NONE ctermbg=lightblue ctermfg=black
+hi CursorLine   cterm=NONE ctermbg=lightgrey ctermfg=black
 
 
 """""" Below option only for gvim 
