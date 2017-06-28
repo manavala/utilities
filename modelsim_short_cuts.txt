@@ -5,3 +5,9 @@ tab - successive level
 h   - Heirarchy signal names
 g   -  move active cursor
 i   -  zoom at centre window
+
+
+##### To run the coverage 
+
+\rm -rf -- !(coverage_test.sv); vlog coverage_test.sv; vsim -c -coverage -coverenhanced test -do " coverage save -onexit file.ucdb;run -all; coverage report -html -htmldir . -details; exit"; firefox index.html
+
