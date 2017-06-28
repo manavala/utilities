@@ -7,7 +7,12 @@ g   -  move active cursor
 i   -  zoom at centre window
 
 
-##### To run the coverage 
+##### To run the functional coverage 
+## make sure $stop added to the code
 
 \rm -rf -- !(coverage_test.sv); vlog coverage_test.sv; vsim -c -coverage -coverenhanced test -do " coverage save -onexit file.ucdb;run -all; coverage report -html -htmldir . -details; exit"; firefox index.html
+
+\rm -rf -- !(coverage_test.sv); vlog coverage_test.sv; vsim -c test -do " coverage save -onexit file.ucdb;run -all; coverage report -html -htmldir . -details; exit"; firefox index.html
+
+\rm -rf -- !(coverage_test.sv); vlog coverage_test.sv; vsim -c test -do " coverage save -onexit file.ucdb;run -all; coverage report  -details"
 
