@@ -22,6 +22,8 @@
 :%normal 2x #removes first two charaters
 :%normal << #move intendation to left of every line
 
+## replace character with next line
+%s/,/\r/g
 
 #To replaec last character
 :%s/$/char_str_to_replace/
