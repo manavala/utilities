@@ -1,4 +1,4 @@
-!/bin/bash                                                                                                                                                                                                                                                                     
+#!/bin/bash                                                                                                                                                                                                                                                                     
 
 OPTS=`getopt -o hglt: --long gui,log,help,time: -n 'parse-options' -- "$@"`
 
