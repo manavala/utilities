@@ -1,0 +1,57 @@
+!/bin/bash                                                                                                                                                                                                                                                                     
+
+OPTS=`getopt -o hglt: --long gui,log,help,time: -n 'parse-options' -- "$@"`
+
+if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
+
+echo "$OPTS"
+eval set -- "$OPTS"
+
+GUI=false
+HELP=false
+LOG=true
+STACK_SIZE=0
+
+while true; do
+  case "$1" in
+    -l | --log ) LOG=true; shift ;;
+    -h | --help )    HELP=true; shift ;;
+    -g | --gui ) GUI=true; shift ;;
+    -t | --time ) TIME="$2"; shift; shift ;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
+
+run_log="vsim.log"
+comp_log="vlog.log"
+
+rm -r work $run_log $comp_log
+
+vlib work
+vlog -f flist -l $comp_log
+
+if grep -q "** Error" $comp_log ; then
+  echo "Compile error!! exit"
+  exit
+fi
+
+if [[ "$LOG" = true ]]; then
+  wave_cmd="log -r /*;"
+else
+  wave_cmd=""
+fi
+
+if [[ "$GUI" = true ]]; then
+  gui_cmd=""
+else
+  gui_cmd="-c"
+fi
+
+if ! [[ $tot_time -eq 0 ]]; then
+  tot_time="all"
+else
+  tot_time=$TIME
+fi
+
+vsim -voptargs="+acc" $gui_cmd alu_test_top +UVM_TESTNAME=test_base -l $run_log -do "$wave_cmd run $tot_time"
