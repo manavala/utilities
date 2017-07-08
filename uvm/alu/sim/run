@@ -14,10 +14,10 @@ TIME=0
 
 while true; do
   case "$1" in
-    -l | --log ) LOG=true; shift ;;
-    -h | --help )    HELP=true; shift ;;
-    -g | --gui ) GUI=true; shift ;;
-    -t | --time ) TIME="$2"; shift; shift ;;
+    -l | --log )    LOG=true; shift ;;
+    -h | --help )   HELP=true; shift ;;
+    -g | --gui )    GUI=true; shift ;;
+    -t | --time )   TIME="$2"; shift; shift ;;
     -- ) shift; break ;;
     * ) break ;;
   esac
