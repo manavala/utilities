@@ -23,6 +23,11 @@ while true; do
   esac
 done
 
+if [[ "$HELP" = true ]]; then
+   echo "Usage --: ./run -g/--gui -l/--log -h/--help -t/--time \$value?"
+   exit 1
+fi      
+
 run_log="vsim.log"
 comp_log="vlog.log"
 
