@@ -10,7 +10,7 @@ eval set -- "$OPTS"
 GUI=false
 HELP=false
 LOG=true
-STACK_SIZE=0
+TIME=0
 
 while true; do
   case "$1" in
