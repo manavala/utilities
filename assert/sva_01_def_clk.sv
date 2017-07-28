@@ -51,6 +51,7 @@ module test;
     @(posedge clk);
   endclocking
 
+    //Properties and sequences defintions can be declared inside the clocking block, but it cannot be multi-clocked
   clocking cb2
     @(posedge clk2);
   endclocking
