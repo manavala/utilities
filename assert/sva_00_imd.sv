@@ -1,4 +1,4 @@
-package sva_lib;                                                                                     
+package sva_lib;
 
   sequence sr1(req,gnt);
     req ##2 gnt;
@@ -19,14 +19,14 @@ module test;
 
   initial forever #5 clk = !clk;
 
-  chk_req_gnt: assert property ( pr1(clk, req, gnt, start) ) $display("pass"); 
-                                 else $display("fail"); 
+  chk_req_gnt: assert property ( pr1(clk, req, gnt, start) ) $display(" [%0t] pass",$realtime);
+                                 else $display(" [%0t] fail",$realtime);                             
   initial begin
     stim(1);//pass
     stim(0);//fail
     @(posedge clk);
     $finish;
-  end 
+  end
 
   task stim(input bit stat);
     @(posedge clk);
@@ -40,6 +40,6 @@ module test;
     @(posedge clk);
   endtask
 
-  initial $monitor(" clk %0d start=%0d req=%0d gnt=%0d",clk,start,req,gnt);
+  initial $monitor(" [%0t] clk %0d start=%0d req=%0d gnt=%0d",$realtime,clk,start,req,gnt);
 
 endmodule
