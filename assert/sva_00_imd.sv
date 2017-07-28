@@ -1,4 +1,4 @@
-package sva_lib;
+package sva_lib_test;
 
   sequence sr1(req,gnt);
     req ##2 gnt;
@@ -12,7 +12,7 @@ endpackage
 
 module test;
 
-  import sva_lib::*;
+  import sva_lib_test::*;
 
   bit clk;
   bit start, req, gnt;
