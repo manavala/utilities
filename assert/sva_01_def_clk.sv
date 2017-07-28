@@ -6,7 +6,7 @@ package sva_lib_test;
     req ##2 gnt;
   endsequence
 
-  property pr1(req, gnt, start); //Formal Arguments
+  property pr1(req, gnt, start); //Formal Arguments - can be typed, if not, type will be inherit from actual
     //values are "sampled" at 'preponed region' == 'value from previous time slot'
     start |-> sr1(req, gnt);
   endproperty
