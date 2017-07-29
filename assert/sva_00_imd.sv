@@ -1,11 +1,16 @@
 package sva_lib_test;                                                                                
 
+  //building block, cannot triggers on its own, need 'assert'
+  //implication operator not allowed
+  //can be decl in mod, prog, pack, intf, scope, checker, generate, clk blk and not in "class"
   sequence sr1(req, gnt);
     //clock can be speciefied here also
     //should be edge, cannot be latch, can be gated clk like (clk && slct_sig)
     req ##2 gnt;
   endsequence
 
+  //decl rules same seq
+  //cannot act itself, needs 'assert'
   property pr1(clk, req, gnt, start); //Formal Arguments
     //values are "sampled" at 'preponed region' == 'value from previous time slot'
     @(posedge clk) start |-> sr1(req, gnt);
@@ -23,6 +28,11 @@ module test;
 
   initial forever #5 clk = !clk;
 
+  //Following are examples of immediate assertions
+  //initial assert(0);
+  //always @() .. assert (??)
+  
+  //Following is concurrent assertion
   //Assertions are evaluated in observed region
   chk_req_gnt: assert property ( pr1(clk, req, gnt, start) ) //Actual Arguments 
                   $display(" [%0t] pass",$realtime); //Action blocks - Evaluated at Reactive region
