@@ -11,7 +11,8 @@ package sva_lib_test;
 
   //decl rules same seq
   //cannot act itself, needs 'assert'
-  property pr1(clk, req, gnt, start); //Formal Arguments
+  property pr1(clk, req, gnt, start); //Formal Arguments --> 'formal' .. In formal verification, the formal values are exercised by 
+    //for formal algorithm by formal tools
     //values are "sampled" at 'preponed region' == 'value from previous time slot'
     @(posedge clk) start |-> sr1(req, gnt);
   endproperty
