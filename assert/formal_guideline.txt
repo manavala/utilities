@@ -1,0 +1,8 @@
+
+####
+///Things to consider for formal
+
+http://www.eetimes.com/document.asp?doc_id=1205241
+
+1. do not over (tight) constraint i.e., 'legal stimulus' so that not all values are exercised, so that bugs might be screened, then RTL looks like bug free
+2. 
