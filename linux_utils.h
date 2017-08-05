@@ -114,3 +114,11 @@ pip install -U git+https://github.com/smeggingsmegger/udemy-dl.git@master
 
 #if not working/ or to update
 pip install --upgrade udemy-dl
+
+
+
+### vcs illegal option
+cd /bin
+sudo rm sh
+##sudo ln -s dash sh ## to get back
+sudo ln -s bash /bin/sh ## to remove the error
