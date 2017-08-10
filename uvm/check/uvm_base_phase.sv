@@ -43,6 +43,10 @@ class test extends uvm_test;
    $display("%m");
  endfunction
 
+ virtual function void final_phase(uvm_phase phase);
+   $display("%m");
+ endfunction
+
 endclass
 
 module top;
