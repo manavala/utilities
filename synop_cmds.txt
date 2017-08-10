@@ -1,4 +1,10 @@
 
 #Command to run basic uvm
-#( use option: -debug_all for running with gui)
-vcs filename.sv -sverilog -ntb_opts uvm +UVM_TESTNAME="?uvm_test" ?? (don't initialize insite test, if not may not overwrite from command line)
+#( use option:
+-debug_all ##for running with gui
++UVM_TESTNAME="?uvm_test" ?? (don't initialize insite test, if not may not overwrite from command line)
++acc ##
+-sverilog ##system verilog
+
+
+vcs filename.sv -sverilog -ntb_opts uvm 
