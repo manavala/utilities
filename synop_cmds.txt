@@ -1,0 +1,2 @@
+#Command to run basic uvm
+vcs filename.sv -sverilog -ntb_opts uvm
