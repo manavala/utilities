@@ -1,0 +1,11 @@
+Bist:
+- in poly, if fb is mux with ff's i/p form coef 1
+- Only the random pattern (non continuous/relational) can get the good fault coverage
+- if random pattern submitted to inputs, how to determin at the output?
+- if 8 input needs 256 patters called exhaustive pattern inside two logic needs only 5 + 5 inputs needs 32 + 32 patterns, total 64 only required of 256 called exhaustive pseudo random pattern
+- form a TPG with repeatability with initial seed to eventually generate golden pattern
+
+Xor is good:
+- for n inputs, if 1 i/p is fault reflect fault at o/p
+Xor is bad:
+- for n inputs, if 2 i/p are fault mask fault at o/p
