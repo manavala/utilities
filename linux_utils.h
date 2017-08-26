@@ -122,3 +122,9 @@ cd /bin
 sudo rm sh
 ##sudo ln -s dash sh ## to get back
 sudo ln -s bash /bin/sh ## to remove the error
+
+
+##
+cut -d ',' -f3,5,6 ## to get the column 3,5,6 from csv
+cut -d ',' -f3-6 ## to get range of columns from 3 to 6
+cut -d ',' --complement -f3,-6 ## inverse
