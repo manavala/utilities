@@ -130,3 +130,5 @@ cut -d ',' -f3-6 ## to get range of columns from 3 to 6
 cut -d ',' --complement -f3,-6 ## inverse ##replace the delimited //// --output-delimiter='#'  ///// ??  
   ///sed 's/,/#/g' seems this is good right instead of the delimiter?
 awk -v x=3 '{print (NR%x?c+1:++c), $0}'  ## append 1 for 3 lines , then 2 for next three lines and go on
+awk 'NR%3==0' ## print last line of each 3rd line
+sed -n 1~3p ## print first line of each 3rd line
