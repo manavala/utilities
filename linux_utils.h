@@ -132,3 +132,16 @@ cut -d ',' --complement -f3,-6 ## inverse ##replace the delimited //// --output-
 awk -v x=3 '{print (NR%x?c+1:++c), $0}'  ## append 1 for 3 lines , then 2 for next three lines and go on
 awk 'NR%3==0' ## print last line of each 3rd line
 sed -n 1~3p ## print first line of each 3rd line, always some making duplicates like this --> sed -n '3,${p;n;n;}'
+  
+  ## get all commands for all users
+  COMMANDS=`echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
+        -executable -type f -printf '%P\n'`
+    ALIASES=`alias | cut -d '=' -f 1`
+    echo "$COMMANDS"$'\n'"$ALIASES" | sort -u
+   ## for bash users
+ compgen -c will list all the commands you could run.
+compgen -a will list all the aliases you could run.
+compgen -b will list all the built-ins you could run.
+compgen -k will list all the keywords you could run.
+compgen -A function will list all the functions you could run.
+compgen -A function -abck will list all the above in one go.
