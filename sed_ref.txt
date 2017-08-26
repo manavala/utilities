@@ -43,3 +43,9 @@ sed 'byte sequence /{:a;N;/\}/d;ba}' file
 
 #remove lines from beginning to pattern matching ( only in bash it is working, tcsh uses previous command)
 sed '/sweet/,$!d' file
+
+
+#If you're trying to match "one or more spaces", use one of these:
+... | sed 's/  */ /g' ## not works in vim, enter spaces between each 'single' chars in string of line
+... | sed 's/ \{1,\}/ /g' ## works in vim
+... | tr -s ' '
