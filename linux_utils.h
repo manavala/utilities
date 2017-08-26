@@ -131,4 +131,4 @@ cut -d ',' --complement -f3,-6 ## inverse ##replace the delimited //// --output-
   ///sed 's/,/#/g' seems this is good right instead of the delimiter?
 awk -v x=3 '{print (NR%x?c+1:++c), $0}'  ## append 1 for 3 lines , then 2 for next three lines and go on
 awk 'NR%3==0' ## print last line of each 3rd line
-sed -n 1~3p ## print first line of each 3rd line
+sed -n 1~3p ## print first line of each 3rd line, always some making duplicates like this --> sed -n '3,${p;n;n;}'
