@@ -1,9 +1,9 @@
 
 /////////////////////////////////////////////////
 //without action
-//rm simv; vcs -ntb_opts uvm -sverilog simple.sv ; ./simv
+//rm simv; vcs -ntb_opts uvm -sverilog file.sv ; ./simv
 //with action
-//rm simv; vcs -ntb_opts uvm -sverilog simple.sv +plusarg_save +uvm_set_action="*,_ALL_,UVM_ERROR,UVM_EXIT" ; ./simv
+//rm simv; vcs -ntb_opts uvm -sverilog file.sv +plusarg_save +uvm_set_action="*,_ALL_,UVM_ERROR,UVM_EXIT" ; ./simv
 /////////////////////////////////////////////////
 
 //One problem with this, quit simulation immediately, it will be good if it can quit after some delay
@@ -26,4 +26,3 @@ endclass
 module top;
   initial run_test("test");
 endmodule
-                                 
