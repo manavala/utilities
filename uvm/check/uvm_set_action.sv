@@ -11,7 +11,7 @@
 import uvm_pkg::*;
 
 class test extends uvm_test;
-  `uvm_component_utils (test)                                                                                                                                                                                       
+  `uvm_component_utils (test) 
   function new (string name="test", uvm_component parent=null);
     super.new (name, parent);
     //just for understanding, don't be lazy, this code not good here, 
