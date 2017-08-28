@@ -8,6 +8,7 @@
 
 //One problem with this, quit simulation immediately, it will be good if it can quit after some delay
 //atleat if it print uvm_error message
+//check report catcher
 
 import uvm_pkg::*;
 
