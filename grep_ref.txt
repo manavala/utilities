@@ -23,3 +23,10 @@ fi
 
 --exclude-dir={dir1,dir2}
 --exclude-dir={dir_*_some} #wildcard
+
+### just color it
+grep --color -E 'pattern|$' file 
+egrep --color 'pattern|$' file
+
+## A-> Below, B-> Upper, if -C? A==B==C
+grep -B 3 -A 2 foo README.txt
