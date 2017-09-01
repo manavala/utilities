@@ -2,9 +2,19 @@
 #Command to run basic uvm
 #( use option:
 -debug_all ##for running with gui
-+UVM_TESTNAME="?uvm_test" ?? (don't initialize insite test, if not may not overwrite from command line)
++UVM_TESTNAME="?uvm_test" ?? (don't initialize inside test, if not, may not overwrite from command line)
 +acc ##
 -sverilog ##system verilog
 
+vcs filename.sv -sverilog -ntb_opts uvm ##(( -R )) to launch in batch without ./simv
 
-vcs filename.sv -sverilog -ntb_opts uvm 
+## to use with library, as in vhdl library
+## make sure of synopsys_sim.setup varaibles
+## Before run, verify with
+mkdir -p wrklib;
+echo "vfy sim.setup for work_lib location ";
+vlogan -work wrklib ../sva_00_imd.sv -debug_all -q -timescale=1ns/1ns +v2k -full64 -sverilog;
+vcs -R wrklib.test -full64  ## with top module
+
+## to point the new synopsys_sim.setup
+vcs -sverilog -full64 ../sva_00_imd.sv -kdb -lca -simdir `pwd` ; ./simv
