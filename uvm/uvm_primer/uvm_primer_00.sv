@@ -1,4 +1,4 @@
-class rectangle;                                                                                                                                                                                       
+class rectangle;
   int length;
   int width;
 
