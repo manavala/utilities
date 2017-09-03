@@ -52,7 +52,7 @@ set visualbell
 set cmdheight=2
  
 "Display line numbers on the left
-set number
+"set number
  
 "Quickly time out on keycodes, but never time out on mappings 
 set notimeout ttimeout ttimeoutlen=200
@@ -96,7 +96,7 @@ set et
 " The next is your tab stop. Lot of people like to keep it 4.
 set sw=2
 set smarttab
-set number
+"set number
 "set guifont=Consolas\ 10
 "set guifont=Monaco:h20
 "set guifont=ProggyCleanTT\ 8
