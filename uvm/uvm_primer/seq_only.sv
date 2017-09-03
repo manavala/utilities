@@ -1,4 +1,7 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+////
+//vcs  -ntb_opts uvm -sverilog  -R seq_only.sv
+/////
+
 import uvm_pkg::*;  `include "uvm_macros.svh"
 
 class mem_seq_item extends uvm_sequence_item;
