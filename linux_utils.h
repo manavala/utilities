@@ -149,3 +149,8 @@ compgen -A function -abck will list all the above in one go.
     
 ####
 cat & tac are reverse in functionally too
+
+###########Uncomment the following lines, by removing the # in the beginning of the lines:
+if [ -f /etc/bash_completion ]; then
+ . /etc/bash_completion
+fi
