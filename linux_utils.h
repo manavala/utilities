@@ -154,3 +154,9 @@ cat & tac are reverse in functionally too
 if [ -f /etc/bash_completion ]; then
  . /etc/bash_completion
 fi
+
+
+#Buffer method of arranging lines
+awk '{a[NR]=$0}END{print a[1];print a[NR];for(i=2;i<NR;i++){print a[i]}}'
+#swap two cols
+awk ' { t = $1; $1 = $2; $2 = t; print; } '
