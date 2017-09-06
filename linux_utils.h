@@ -160,3 +160,6 @@ fi
 awk '{a[NR]=$0}END{print a[1];print a[NR];for(i=2;i<NR;i++){print a[i]}}'
 #swap two cols
 awk ' { t = $1; $1 = $2; $2 = t; print; } '
+## use back to back commands
+awk 'END{print}; ( ( $1 < 129 && $2 < 500) || ( $1 > 128 && $2 > 500 && $2 < 2000 ) ) '
+##
