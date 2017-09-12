@@ -2,6 +2,7 @@
 
 class prod extends uvm_component; 
   uvm_blocking_put_port #(int) put_port;
+  //uvm_put_port #(int) put_port; //same
   function new(string name, uvm_component parent=null);
     super.new(name,parent);
     put_port=new("put_port",this);
@@ -19,6 +20,7 @@ endclass
 
 class cons extends uvm_component;
   uvm_blocking_get_port #(int) get_port;
+  //uvm_get_port #(int) get_port;//same
   uvm_tlm_fifo #(int) t2;
 
   function new(string name, uvm_component parent=null, uvm_tlm_fifo #(int) t1);
