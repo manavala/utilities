@@ -163,3 +163,12 @@ awk ' { t = $1; $1 = $2; $2 = t; print; } '
 ## use back to back commands
 awk 'END{print}; ( ( $1 < 129 && $2 < 500) || ( $1 > 128 && $2 > 500 && $2 < 2000 ) ) '
 ##
+
+  
+ #Ghost script to reduce the pdf size
+ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook     -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages     -dCompressFonts=true -r150 -sOutputFile=out.pdf in.pdf
+ -dPDFSETTINGS=/screen lower quality, smaller size.
+-dPDFSETTINGS=/ebook for better quality, but slightly larger pdfs.
+-dPDFSETTINGS=/prepress output similar to Acrobat Distiller "Prepress Optimized" setting
+-dPDFSETTINGS=/printer selects output similar to the Acrobat Distiller "Print Optimized" setting
+-dPDFSETTINGS=/default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file
