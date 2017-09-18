@@ -51,3 +51,13 @@ sed '/^\s$/d/'
 ... | sed 's/  */ /g' ## not works in vim, enter spaces between each 'single' chars in string of line
 ... | sed 's/ \{1,\}/ /g' ## works in vim
 ... | tr -s ' '
+
+## first search and apply replace string for different rule on same line
+sed '/str1 s/$/end/' ## search for str1 and then insert at end of line
+
+#inversion , delete
+sed '/<expression>/!d;s//<replacement>/g' file
+sed 's/<expression>/<replacement>/gp;d' file
+
+##just inversion
+sed '/#/! s/^/  /'
