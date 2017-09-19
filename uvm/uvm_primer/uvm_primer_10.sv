@@ -21,7 +21,7 @@ class test_for_cfg extends uvm_test;
       $fatal("cannot get");
     $display(b);
   endfunction
-                                                                                                                                                                                                       
+                           
 endclass
 
 module top;
