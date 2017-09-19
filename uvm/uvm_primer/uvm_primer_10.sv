@@ -1,6 +1,8 @@
-//##
-//set file='../uvm_primer_10.sv' ; vcs -full64 -sverilog -debug_access+all -lca $file -ntb_opts uvm ; if ( $status == 0 ) bsub -Ip ./simv -l sim.log
-//##
+//#!/bin/csh
+//set file='../uvm_primer_10.sv' ; \
+//vcs -full64 -sverilog -debug_access+all -lca ../uvm_primer_10.sv -ntb_opts uvm ; \
+//if ( $status == 0 ) bsub -Ip ./simv -l sim.log 
+
 
 //Level 1
 
