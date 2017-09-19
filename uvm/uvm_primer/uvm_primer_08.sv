@@ -1,5 +1,5 @@
 //##
-//set file='../uvm_primer_10.sv' ; vcs -full64 -sverilog -debug_access+all -lca $file -ntb_opts uvm ; if ( $status == 0 ) bsub -Ip ./simv -l sim.log
+//set file='../uvm_primer_08.sv' ; vcs -full64 -sverilog -debug_access+all -lca $file -ntb_opts uvm ; if ( $status == 0 ) bsub -Ip ./simv -l sim.log
 //##
 
 class trans extends uvm_component;
