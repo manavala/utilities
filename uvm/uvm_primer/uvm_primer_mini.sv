@@ -87,6 +87,9 @@ class test extends uvm_test;
     //ignore if connect is attempt  at or after end_of_elaboration phase
     drv_h.seq_item_port.connect(seqr_h.seq_item_export);
   endfunction
+    function void end_of_elaboration();
+    uvm_top.print_topology (); 
+  endfunction
 
   task run_phase(uvm_phase phase);
     phase.raise_objection(this);
