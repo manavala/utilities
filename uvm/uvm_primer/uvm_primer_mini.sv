@@ -105,10 +105,10 @@ module top;
 endmodule
 
 ///// Level 4
-////////////////////////////////////////////////////////////////////
-// sequence_item: abstracted package of the transaction
+/*******************************************************************
+** sequence_item: abstracted package of the transaction
 //
-////////////////////////////////////////////////////////////////////
+*******************************************************************/
 class seq_item extends uvm_sequence_item;
   `uvm_object_utils(seq_item);
   function new(string name="seq_item");
@@ -116,10 +116,10 @@ class seq_item extends uvm_sequence_item;
   endfunction
 endclass
 
-////////////////////////////////////////////////////////////////////
-// sequence:  protocol or actual test sequence 
-//            or individual or sequence of seqeuces
-////////////////////////////////////////////////////////////////////
+/*******************************************************************
+** sequence:  protocol or actual test sequence 
+**            or individual or sequence of seqeuces
+*******************************************************************/
 class seq extends uvm_sequence#(seq_item);
   `uvm_object_utils(seq);
   function new(string name="seq");
@@ -134,16 +134,16 @@ class seq extends uvm_sequence#(seq_item);
   endtask
 endclass
 
-////////////////////////////////////////////////////////////////////
-// sequencer: mostly not needed unless something need to extend 
+/*******************************************************************
+** sequencer: mostly not needed unless something need to extend 
 //
-////////////////////////////////////////////////////////////////////
+*******************************************************************/
 typedef uvm_sequencer #(seq_item) sequencer;
 
-////////////////////////////////////////////////////////////////////
-// driver:  protocol specific of dut, directly talks with dut with 
-//          virtual (pointer) interface
-////////////////////////////////////////////////////////////////////
+/*******************************************************************
+** driver:  protocol specific of dut, directly talks with dut with 
+**          virtual (pointer) interface
+*******************************************************************/
 class drv extends uvm_driver #(seq_item);
   `uvm_component_utils(drv);
   function new(string name, uvm_component parent=null);
@@ -151,11 +151,11 @@ class drv extends uvm_driver #(seq_item);
   endfunction
 endclass
 
-////////////////////////////////////////////////////////////////////
-// monitor: monitor dut transactions as same as driver method,
-//          this won't drive just monitors
-//          can email subscribers to scoreboard / checkers
-////////////////////////////////////////////////////////////////////
+/*******************************************************************
+** monitor: monitor dut transactions as same as driver method,
+**          this won't drive just monitors
+**          can email subscribers to scoreboard / checkers
+*******************************************************************/
 class mon extends uvm_monitor;
   `uvm_component_utils(mon);
   function new(string name, uvm_component parent=null);
@@ -163,10 +163,10 @@ class mon extends uvm_monitor;
   endfunction
 endclass
 
-////////////////////////////////////////////////////////////////////
-// agent: controls whether this interface/protocol specific agent is
-//        just monitor or also drives
-////////////////////////////////////////////////////////////////////
+/*******************************************************************
+** agent: controls whether this interface/protocol specific agent is
+**        just monitor or also drives
+*******************************************************************/
 class agent extends uvm_agent;
   `uvm_component_utils(agent);
   drv drv_h;
@@ -186,10 +186,10 @@ class agent extends uvm_agent;
   endfunction
 endclass
 
-////////////////////////////////////////////////////////////////////
-// env: decides whether its agents can be drive or just monitors
-//      single driver and multiple montior agents are possible
-////////////////////////////////////////////////////////////////////
+/*******************************************************************
+** env: decides whether its agents can be drive or just monitors
+**      single driver and multiple montior agents are possible
+*******************************************************************/
 class env extends uvm_env;
   `uvm_component_utils(env);
   agent agnt_h;
@@ -201,12 +201,12 @@ class env extends uvm_env;
   endfunction
 endclass
 
-////////////////////////////////////////////////////////////////////
-// test: 1. instantiate structure componet(env and its inside)
-//          which will be available throught sim
-//       2. create data part sequences and which may be deleted once
-//          sent and not required anymore to save memory
-////////////////////////////////////////////////////////////////////
+/*******************************************************************
+** test: 1. instantiate structure componet(env and its inside)
+**          which will be available throught sim
+**       2. create data part sequences and which may be deleted once
+**          sent and not required anymore to save memory
+*******************************************************************/
 class base_test extends uvm_test;
   `uvm_component_utils(base_test);
   sequencer seqr_h;
@@ -257,3 +257,4 @@ module top;
     run_test("base_test");
   end
 endmodule
+
