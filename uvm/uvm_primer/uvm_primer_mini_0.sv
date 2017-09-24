@@ -166,12 +166,7 @@ endclass
 **       2. create data part sequences and which may be deleted once
 **          sent and not required anymore to save memory
 *******************************************************************/
-/*******************************************************************
-** test: 1. instantiate structure componet(env and its inside)
-**          which will be available throught sim
-**       2. create data part sequences and which may be deleted once
-**          sent and not required anymore to save memory
-*******************************************************************/
+
 class base_test extends uvm_test;
   `uvm_component_utils(base_test);
   sequencer seqr_h;
