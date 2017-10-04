@@ -4,7 +4,7 @@ Sub Macro1()
 '
     With Selection.Interior
         .Pattern = xlPatternLinearGradient
-        .Gradient.Degree = 0
+        .Gradient.Degree = 0 ' veritical , 90-> Horizontal
         .Gradient.ColorStops.Clear
     End With
     With Selection.Interior.Gradient.ColorStops.Add(0)
