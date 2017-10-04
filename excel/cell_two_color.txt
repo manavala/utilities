@@ -1,0 +1,104 @@
+Sub Macro1()
+'
+' Macro1 Macro
+'
+    With Selection.Interior
+        .Pattern = xlPatternLinearGradient
+        .Gradient.Degree = 0
+        .Gradient.ColorStops.Clear
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(0)
+        .ThemeColor = xlThemeColorDark1 'First Color
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(0.49)
+        .ThemeColor = xlThemeColorDark1 'First Color
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(0.51)
+        .ThemeColor = xlThemeColorAccent1 'Second Color
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(1)
+        .ThemeColor = xlThemeColorAccent1 'Second Color
+    End With
+End Sub
+
+Sub Macro2()
+With Selection.Interior
+ .Pattern = xlPatternLinearGradient
+ .Gradient.Degree = 90
+ .Gradient.ColorStops.Clear
+End With
+
+ 'adds stops after any have been cleared
+With Selection.Interior.Gradient.ColorStops.Add(0)
+ .ThemeColor = xlThemeColorDark1
+ .TintAndShade = 0
+End With
+
+With Selection.Interior.Gradient.ColorStops.Add(1)
+ .ThemeColor = xlThemeColorAccent1
+ .TintAndShade = 0
+End With
+End Sub
+
+
+Sub Macro3()
+With Selection.Interior
+ .Pattern = xlPatternRectangularGradient
+ .Gradient.RectangleLeft = 0
+ .Gradient.RectangleRight = 0
+ .Gradient.RectangleTop = 0
+ .Gradient.RectangleBottom = 0
+ .Gradient.ColorStops.Clear
+End With
+
+With Selection.Interior.Gradient.ColorStops.Add(0)
+ .Color = 192
+ .TintAndShade = 0
+End With
+
+With Selection.Interior.Gradient.ColorStops.Add(1)
+ .ThemeColor = xlThemeColorLight1
+ .TintAndShade = 0
+End With
+End Sub
+
+
+Sub SetGradient()
+
+
+    With Selection.Interior
+        .Pattern = xlPatternLinearGradient
+        .Gradient.Degree = 90
+        .Gradient.ColorStops.Clear
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(0)
+        .Color = 16777215
+        .TintAndShade = 0
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(0.5)
+        .Color = 7961087
+        .TintAndShade = 0
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(1)
+        .Color = 16777215
+        .TintAndShade = 0
+    End With
+End Sub
+Sub Macro4()
+'
+' Macro1 Macro
+'
+    With Selection.Interior
+        .Pattern = xlPatternLinearGradient
+        .Gradient.Degree = 90
+        .Gradient.ColorStops.Clear
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(0)
+        .ThemeColor = xlThemeColorDark1
+        .TintAndShade = 0
+    End With
+    With Selection.Interior.Gradient.ColorStops.Add(1)
+        .ThemeColor = xlThemeColorAccent1
+        .TintAndShade = 0
+    End With
+End Sub
