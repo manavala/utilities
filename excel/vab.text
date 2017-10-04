@@ -1,0 +1,89 @@
+'Method 1, standard array for search text and fill cell color
+
+Public Function StrArray(ParamArray args() As Variant) As String()
+   Dim i As Long
+   ReDim temp(UBound(args)) As String
+   For i = 0 To UBound(args)
+       temp(i) = args(i)
+   Next
+   StrArray = temp
+End Function
+
+
+Public Sub MatchAndColor()
+
+Dim lastRow As Long
+Dim lastCol As Long
+Dim sheetName As String
+
+Dim MsgCode() As String
+Dim MsgColor(2) As Integer
+
+MsgCode = StrArray("PASS", "FAIL")
+MsgColor(0) = 4
+MsgColor(1) = 3
+
+    sheetName = ActiveSheet.Name
+    'sheetName = "Sheet1"            'Insert your sheet name here
+    'lastRow = 60 'Sheets(sheetName).Range("A" & Rows.Count).End(xlUp).Row
+    'lastCol = 60 'Sheets(sheetName).Range("1" & Columns.Count).End(xlUp).Column
+    lastRow = 60 ' sheetName.Cells(sht.Rows.Count, "A").End(xlUp).Row ' Sheets(sheetName).Range("A" & Rows.Count).End(xlUp).Row
+    lastCol = 60 ' Sheets(sheetName).Range("1" & Columns.Count).End(xlToLeft).Column
+
+    For lRow = 1 To lastRow         'Loop through all rows
+        For lCol = 1 To lastCol         'Loop through all columns
+            For index0 = 0 To 1
+                If Sheets(sheetName).Cells(lRow, lCol).Text Like MsgCode(index0) & "*" Then
+                    Sheets(sheetName).Cells(lRow, lCol).Interior.ColorIndex = MsgColor(index0)  'Set Color from array value
+                End If
+            Next index0
+        Next lCol
+    Next lRow
+    
+End Sub
+
+'Method 2, lik associative array using dict for search text and fill cell color
+- go ot the VBIDE
+- menu Tools>references
+- scroll down until you find the item marked Microsoft Scripting Runtime and check that
+- then scroll down/up until you find the item marked Microsoft VBScript Regular Expresssions, and check that
+- exit and try again
+
+
+
+Public Sub MatchAndColor()
+
+Dim lastRow As Long
+Dim lastCol As Long
+Dim sheetName As String
+
+
+Dim MsgCodeAndColor As Scripting.Dictionary
+Dim code As Variant
+
+    'Create the dictionary
+    Set MsgCodeAndColor = New Scripting.Dictionary
+
+   'Add some (key, value) pairs
+
+   MsgCodeAndColor.Add "PASS", 4
+   MsgCodeAndColor.Add "FAIL", 3
+
+
+    sheetName = ActiveSheet.Name
+    'sheetName = "Sheet1"            'Insert your sheet name here
+    lastRow = 60 ' sheetName.Cells(sht.Rows.Count, "A").End(xlUp).Row ' Sheets(sheetName).Range("A" & Rows.Count).End(xlUp).Row
+    lastCol = 60 ' Sheets(sheetName).Range("1" & Columns.Count).End(xlToLeft).Column
+
+    For lRow = 1 To lastRow         'Loop through all rows
+        For lCol = 1 To lastCol         'Loop through all columns
+        For Each code In MsgCodeAndColor.Keys
+            If Sheets(sheetName).Cells(lRow, lCol).Text Like code & "*" Then
+               Sheets(sheetName).Cells(lRow, lCol).Interior.ColorIndex = MsgCodeAndColor(code)  'Set Color from array value
+            End If
+       Next
+
+        Next lCol
+    Next lRow
+    
+End Sub
