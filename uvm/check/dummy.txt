@@ -1,0 +1,48 @@
+Scoreboard
+1. inorder to check something, need information
+2. scoreboard recvs info from intf UVCs
+
+Functional coverage:
+1. If we have constrain random, then we need the functional coverage
+2. When we use different types of tests (sequnces) that means we already collecting different types of transaction types that we are exercising, still we need functional coverage
+
+Test:
+1. Responsible for test intent
+2. Responsible for traffic
+(Cadence uvm 19) 3. from the "test"(cmd line), we can specify the run_phase of sequencer to pickup the particular sequence
+
+Configuration happens only from " Top down "
+Test -> Testbench -> Envs -> UVCs, etc
+Control everything(actve,passve,instance, etc) with "string name" of any type(class, vartibale)
+
+TODO:
+always try to do array of anything (class, variables, etc)
+
+Factory - ( no more hard coding)
+change anything from anywhere easily - set type override
+
+TODO:
+if a variable is put into factory, can be overide with different types(int to array, class handler, ext)?
+
+Phases - for synchronization of UVM components
+
+report:
+"_hier" methods must be called after build_phase, since after build_phase only all the objects are generated, then can be override
+
+Static 1-time Learning:
+1. SV Language basics
+2. SV Interface and programs
+3. OOP 
+4. UVM - Reusable agent
+5. UVM - Reusable env
+6. UVM - Stimulus generation
+
+Dyanmic Learning from friends :-) :D 
+1. RTL Debugging - 
+2. System Verilog debugging
+3. UVM debugging - Shortern the time
+
+Random:
+What are things needs/can be randomized?
+1. Transaction objects(header, payload, etc)
+2. Configuration objects(num_pkts, num_master, num_slaves)
