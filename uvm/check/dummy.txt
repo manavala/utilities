@@ -4,12 +4,14 @@ Scoreboard
 
 Functional coverage:
 1. If we have constrain random, then we need the functional coverage
-2. When we use different types of tests (sequnces) that means we already collecting different types of transaction types that we are exercising, still we need functional coverage
+2. When we use different types of tests (sequnces) that means we already collecting different types of \
+transaction types that we are exercising, still we need functional coverage
 
 Test:
 1. Responsible for test intent
 2. Responsible for traffic
-(Cadence uvm 19) 3. from the "test"(cmd line), we can specify the run_phase of sequencer to pickup the particular sequence
+(Cadence uvm 19 Youtube) 3. from the "test"(cmd line), we can specify the run_phase of sequencer to pickup \
+the particular sequence
 
 Configuration happens only from " Top down "
 Test -> Testbench -> Envs -> UVCs, etc
@@ -27,7 +29,8 @@ if a variable is put into factory, can be overide with different types(int to ar
 Phases - for synchronization of UVM components
 
 report:
-"_hier" methods must be called after build_phase, since after build_phase only all the objects are generated, then can be override
+"_hier" methods must be called after build_phase, since after build_phase only all the objects are generated,\
+then can be override
 
 Static 1-time Learning:
 1. SV Language basics
