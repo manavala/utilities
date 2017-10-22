@@ -49,3 +49,29 @@ Random:
 What are things needs/can be randomized?
 1. Transaction objects(header, payload, etc)
 2. Configuration objects(num_pkts, num_master, num_slaves)
+
+UVM tests:
+1. do compile one time
+2. run any test as per the interest with the UVM_TESTNAME command line argument to the simulator
+
+UVM Componebts:
+1. To control something before letting it to quit, raise_objection and once done drop_objection. Mostly test required this. Coverage or Scoreboard doesn't need this.
+2. From UVM_COMponent extended to virtual base_test
+ In that virtual base_test:
+  add basic things that needs to inherited/compulsory for other methods
+   like config_db, build_phase, pure virtual methods, etc
+  Then extend from the base test for pure virtual method definitions, always make sure to register with factory
+   Don't worry create "new" object for the virtual calss. since it is registered with the factory  type_id::create:: can get us the object from factory method and returns the handle. Still it can't be instantiated with, cause it is virtual. so what you do is , use "set_type_override" and override the base virtual with extended test, so no problem, since we need extended to pass down for create.
+   If it is registered with factory, then only the "settype_override" (uses polymorphism with base_test) can be used to override the base test with new test.
+
+ Analysis port implments the sub-server
+ UVM subscriber has "analysis port" and has pure write method
+ Whenever this analysis port(server) has got new transactions, that reaches 
+their subscribers
+
+3. UVM driver, UVM sequencer, UVM agent are already extended from the UVM component.
+##
+good thing about the command line instead of the compiling is to save time for the compiling. eg: +UVM_VERBOSITY=???
+
+
+
