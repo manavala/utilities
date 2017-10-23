@@ -1,5 +1,6 @@
 ## callback
 ## pass the "function" as the argument to other function
+#copied from youtube
 
 #!/usr/bin/env python
 
