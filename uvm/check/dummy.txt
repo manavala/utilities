@@ -77,5 +77,5 @@ good thing about the command line instead of the compiling is to save time for t
 * TLM works only at 2 levels
 * C-C++-SystemC-TLM 2 level is much faster than HDL 4 level and more event regions
 
-
-
+In RTL no controlling. Just executes as real chip, concurrent
+TLM can control.
