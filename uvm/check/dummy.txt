@@ -73,5 +73,9 @@ their subscribers
 ##
 good thing about the command line instead of the compiling is to save time for the compiling. eg: +UVM_VERBOSITY=???
 
+* Use UML diagram for the class properties and methods
+* TLM works only at 2 levels
+* C-C++-SystemC-TLM 2 level is much faster than HDL 4 level and more event regions
+
 
 
