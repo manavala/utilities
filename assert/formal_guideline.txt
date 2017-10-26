@@ -1,13 +1,23 @@
-
 ####
 ///Things to consider for formal
 
 http://www.eetimes.com/document.asp?doc_id=1205241
 
 1. do not over (tight) constraint i.e., 'legal stimulus' so that not all values are exercised, 
-so that bugs might be screened, then RTL looks like bug free
-2. 
+so that bugs might be screened, then RTL looks like bug free - Coverage solves this
+a != b instead of !(a&b) as a & b shouldn't be one
+2. avoid wrong assertions - Debug with Cntr Ex
+3. avoid under(no) constraints - Debug with Cntr Ex
+4. avoid in-sufficient assertions - Solves with assertion coverage
+5. Existing assertion still not powerful - solving is challenging eg like == instead of ===, etc
 
+Advantages:
+1. Before the simulation, can find bugs at block level
+2. We will more concentrate on spec
+3. Properties also attached/included with RTL
+4. 
+
+Cntr Ex:
 
 Doulus //Formal Verification for Non-Specialists
 
@@ -22,7 +32,6 @@ Formal is for the bug hunting
 Specify a assertion/coverpoint to formal to hunt, formal will try to fail that condition as Golden Nuggets
 In Simulation, assume acts as assertion
 Also Simulation will help to check not overconstrained, best thing to do this is using cover points add what condition need to be tested
-
 
 run] $ vcf -gui -f selAB.tcl
 run] $ cat selAB.tcl
