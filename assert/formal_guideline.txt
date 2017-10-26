@@ -15,9 +15,36 @@ Advantages:
 1. Before the simulation, can find bugs at block level
 2. We will more concentrate on spec
 3. Properties also attached/included with RTL
-4. 
+
+Things that Formal Apps takes care (Low Hanging Fruit):
+1. Automatic Property Extraction
+2. Connectivity
+3. Coverage and Unreachability
+4. Sequential equivalence checking
+5. Register Verification
+6. Security paths
+
+For these things make sure of below things:
+1. Just write assertions
+2. All are seperate tools with different user interface based on its purpose
 
 Cntr Ex:
+  state kind of thing, similar to simulation
+
+Can't exactly say. There is no 100 % Verification, but try these things
+do something else
+check simulation(functional)/emulation/formal
+
+with formal try below things in tool parameter:
+1. more time ( as long as different random / seed )
+2. more memory
+3. different engine
+4. reduce complex to simple property
+5. reduce complex to simple rtl
+6. overconstraints the inputs
+7. Divide and Conquer
+8. Add cut points / blacj boxes
+9. Abstractions/ideas to prog
 
 Doulus //Formal Verification for Non-Specialists
 
