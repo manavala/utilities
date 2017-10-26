@@ -7,3 +7,28 @@ http://www.eetimes.com/document.asp?doc_id=1205241
 1. do not over (tight) constraint i.e., 'legal stimulus' so that not all values are exercised, 
 so that bugs might be screened, then RTL looks like bug free
 2. 
+
+
+Doulus //Formal Verification for Non-Specialists
+
+Bug hunting
+Assurance, particulary of complex control logic
+Checking simple things like RTL linting, connectivity, coverage waivers
+Forces you to understand the spec
+Post-silicon debug
+
+Simulation/Emulation is for end-to-end ( use cases ==> golden cases )
+Formal is for the bug hunting
+Specify a assertion/coverpoint to formal to hunt, formal will try to fail that condition as Golden Nuggets
+In Simulation, assume acts as assertion
+Also Simulation will help to check not overconstrained, best thing to do this is using cover points add what condition need to be tested
+
+
+run] $ vcf -gui -f selAB.tcl
+run] $ cat selAB.tcl
+read_file -format sverilog -sva -top selAB -vcs {selAB.sv}
+create_clock clk -period 100
+sim_run -stable
+sim_save_reset
+check_fv -block
+report_fv
