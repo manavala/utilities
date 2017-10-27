@@ -1,0 +1,32 @@
+]$ cat mux_3.sv
+module mux(input logic clk, inA, inB, selA, selB,
+           output logic out);
+always@(posedge clk) begin
+  if(selA) out<=inA;
+  if(selB) out<=inB;
+end
+check_selA: assert property ( @(posedge clk) selA |=> out == $past(inA));
+check_selB: assert property ( @(posedge clk) selB |=> out == $past(inB));
+cover_00: cover property ( @(posedge clk) ! selA & ! selB);
+//Formal: assume => Constraints ( Formal engine will not drive combinations if that can fail this assume)
+//Simulation: assume => Assert ( if simulation drives same value for A & B, will get assert error )
+//Over constrained
+//A,B => 0 ! 1 => true, will be driven
+//A,B => 1 ! 0 => true, will be driven
+//A,B => 1 ! 1 => false, will not be driven
+//A,B => 0 ! 0 => true, will be driven
+assume_AnotB: assume property ( @(posedge clk) !(selA & selB));
+endmodule
+
+]$ cat mux_3.tcl
+read_file -format sverilog -sva -top mux -vcs {mux_3.sv}
+create_clock clk -period 100
+sim_run -stable
+sim_save_reset
+check_fv -block
+report_fv
+
+Command: bsub -Ip vcf -gui -full64 -f mux_3.tcl
+
+Error message:
+no Errors :)
