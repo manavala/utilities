@@ -1,0 +1,12 @@
+Vmanager Steps:
+1. Launch the Vmanager
+	Cmd: bsub -Ip vmanager &
+	It opens the "Incisive Enterprise Manager"
+2. Click "Setup" icon
+	It adds the default local session
+3. Click "Vplan" icon in the same window
+	It opens new window "verification Plan tree" & Switch to that window
+4. Click "New ep" icon in the same window
+	It opens the new window "Enterprise Planner" & Switch to that window
+5. In Right side pane, select tab "Specs" next "Plan" tab
+	Click "Add a spec" 
