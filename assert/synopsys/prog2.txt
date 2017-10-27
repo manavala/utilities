@@ -1,0 +1,30 @@
+]$ cat mux_2.sv
+module mux(input logic clk, inA, inB, selA, selB,
+           output logic out);
+always@(posedge clk) begin
+  if(selA) out<=inA;
+  if(selB) out<=inB;
+end
+check_selA: assert property ( @(posedge clk) selA |=> out == $past(inA));
+check_selB: assert property ( @(posedge clk) selB |=> out == $past(inB));
+cover_00: cover property ( @(posedge clk) ! selA & ! selB);
+//Formal: assume => Constraints
+//Simulation: assume => Assert
+//Over constrained
+assume_AnotB: assume property ( @(posedge clk) selA != selB);
+endmodule
+
+]$ cat mux_2.tcl
+read_file -format sverilog -sva -top mux -vcs {mux_2.sv}
+create_clock clk -period 100
+sim_run -stable
+sim_save_reset
+check_fv -block
+report_fv
+
+Command: bsub -Ip vcf -gui -full64 -f mux_2.tcl
+
+Error message:
+Very straight forward :)
+Assumed A != B, so 00 & 11 are not driven by formal tool
+Coverage_00: expect 00 to be driven by formal tool and it doesn't happen, so failed
