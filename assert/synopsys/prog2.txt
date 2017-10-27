@@ -32,3 +32,20 @@ Error message:
 Very straight forward :)
 Assumed A != B, so 00 & 11 are not driven by formal tool
 Coverage_00: expect 00 to be driven by formal tool and it doesn't happen, so failed
+
+Log:
+report_fv
+  Summary Results
+   Property Summary: FPV
+   -----------------
+   > Assertion
+     - # found        : 2
+     - # proven       : 2
+   > Vacuity
+     - # found        : 2
+     - # non_vacuous  : 2
+   > Cover
+     - # found        : 1
+     - # uncoverable  : 1
+   > Constraint
+     - # found        : 1
