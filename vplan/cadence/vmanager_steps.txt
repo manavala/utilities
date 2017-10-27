@@ -1,4 +1,7 @@
 Vmanager Steps:
+
+Youtube string: "Easily Create Verification Plans with Enterprise Manager"
+
 1. Launch the Vmanager
 	Cmd: bsub -Ip vmanager &
 	It opens the "Incisive Enterprise Manager"
