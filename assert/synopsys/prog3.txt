@@ -30,3 +30,20 @@ Command: bsub -Ip vcf -gui -full64 -f mux_3.tcl
 
 Error message:
 no Errors :)
+
+Log:
+report_fv
+  Summary Results
+   Property Summary: FPV
+   -----------------
+   > Assertion
+     - # found        : 2
+     - # proven       : 2
+   > Vacuity
+     - # found        : 2
+     - # non_vacuous  : 2
+   > Cover
+     - # found        : 1
+     - # covered      : 1
+   > Constraint
+     - # found        : 1
