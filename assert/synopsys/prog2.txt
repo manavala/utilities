@@ -8,8 +8,8 @@ end
 check_selA: assert property ( @(posedge clk) selA |=> out == $past(inA));
 check_selB: assert property ( @(posedge clk) selB |=> out == $past(inB));
 cover_00: cover property ( @(posedge clk) ! selA & ! selB);
-//Formal: assume => Constraints
-//Simulation: assume => Assert
+//Formal: assume => Constraints ( Formal engine will not drive combinations if that can fail this assume)
+//Simulation: assume => Assert ( if simulation drives same value for A & B, will get assert error )
 //Over constrained
 assume_AnotB: assume property ( @(posedge clk) selA != selB);
 endmodule
