@@ -1,0 +1,23 @@
+]$ cat myx.sv
+module mux(input logic clk, inA, inB, selA, selB,
+           output logic out);
+always@(posedge clk) begin
+  if(selA) out<=inA;
+  if(selB) out<=inB;
+end
+check_selA: assert property ( @(posedge clk) selA |=> out == $past(inA));
+check_selB: assert property ( @(posedge clk) selB |=> out == $past(inB));
+endmodule
+
+]$ cat mux.tcl
+read_file -format sverilog -sva -top mux -vcs {mux.sv}
+create_clock clk -period 100
+sim_run -stable
+sim_save_reset
+check_fv -block
+report_fv
+
+Command: bsub -Ip vcf -gui -full64 -f mux.tcl
+
+Error message:
+selA and selB are 1, inA=0, inB=1, out for selA input is overwirtten by selB, so out carries inB, so "check_selA" fails
