@@ -21,3 +21,8 @@ Command: bsub -Ip vcf -gui -full64 -f mux.tcl
 
 Error message:
 selA and selB are 1, inA=0, inB=1, out for selA input is overwirtten by selB, so out carries inB, so "check_selA" fails
+
+How to debug/view/verify this:
+1. Double Click on VCF.GoalList->Status-> "X" mark, verdi open the waveform with "red" mark on the failed assertion wave
+2. In the wave windows, double click on the "red" part of the failied assertion, verdi will open the analyzer window with the details of time&signal value associated with that assertion
+By default all the steps happens automatically, no other steps required to debug this
