@@ -26,3 +26,48 @@ How to debug/view/verify this:
 1. Double Click on VCF.GoalList->Status-> "X" mark, verdi open the waveform with "red" mark on the failed assertion wave
 2. In the wave windows, double click on the "red" part of the failied assertion, verdi will open the analyzer window with the details of time&signal value associated with that assertion
 By default all the steps happens automatically, no other steps required to debug this
+
+
+Log: #MasterSourceFile mux.tcl
+read_file -format sverilog -sva -top mux -vcs {mux.sv}
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS/VCS-MX Release Notes
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+=======================================================
+VCS CPU Time(s)     :0.08
+SIMON CPU Time(s)   :0.01
+SIMON Total Time(s) :0.04
+Peak Memory(MB)     :314
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[Info] DB_COPT045: Vcs analyzer task has finished.
+[Info] PROP_I_COLLECT: Collecting Source Properties from the view:mux.
+create_clock clk -period 100
+sim_run -stable
+[Info] SIM_I_CREATE: Create Simulation Model.
+sim_save_reset
+check_fv -block
+[Info] FORMAL_I_CREATE: Create Formal Model:mux.
+[Info] FORMAL_I_RUN: Starting formal verification for check_fv
+	  Id: 0  Goals: 4  Constraints: 0  Block Mode: true
+report_fv
+  Summary Results
+   Property Summary: FPV
+   -----------------
+   > Assertion
+     - # found        : 2
+     - # proven       : 1
+     - # falsified    : 1
+   > Vacuity
+     - # found        : 2
+     - # non_vacuous  : 2
+Updating database ... please wait ...
