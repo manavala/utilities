@@ -1,5 +1,5 @@
 https://help.ece.gatech.edu/software/synopsys/vcstatic-formal
 #which vc_static_shell
-#which vcf
+#which vcf #older tools doesn't have vcf
 
 -full64 for 64bit machine
