@@ -11,6 +11,10 @@ cover_00: cover property ( @(posedge clk) ! selA & ! selB);
 //Formal: assume => Constraints ( Formal engine will not drive combinations if that can fail this assume)
 //Simulation: assume => Assert ( if simulation drives same value for A & B, will get assert error )
 //Over constrained
+//A,B => 0 ! 1 => true, will be driven
+//A,B => 1 ! 0 => true, will be driven
+//A,B => 1 ! 1 => false, will not be driven
+//A,B => 0 ! 0 => false, will not be driven
 assume_AnotB: assume property ( @(posedge clk) selA != selB);
 endmodule
 
@@ -27,4 +31,4 @@ Command: bsub -Ip vcf -gui -full64 -f mux_2.tcl
 Error message:
 Very straight forward :)
 Assumed A != B, so 00 & 11 are not driven by formal tool
-Coverage_00: expect 00 to be driven by formal tool and it doesn't happen, so failed
+Coverage_00: expect 00 to be driven by formal tool and it doesn't happen, so failed
