@@ -1,0 +1,42 @@
+Youtube string: SOC MITCOE
+
+When Verification completes?
+is Functional coverage done?
+is RTL code exercised? (code coverage)
+for last few weeks no bug?
+MDV 100%?
+Others: Time to chip
+
+Verification approaches:
+1. Top-down: System to IPs
+System spec
+System Design
+HW IPs library
+SW IPs library
+Netlist verification
+Timing verification
+
+2. Down-Top: IPs to System
+3. Platform based: To check interconnection like for newly added IPs
+
+Types of Verification Tests:
+1. Random Testing
+2. Functional testing
+3. compliance testing
+4. corner case testing
+5. FW testing
+
+Verification Tools:
+1. Simulation
+ Event driven - Timing accurate
+ Transaction based - needs BFM
+2. Code Coverge based
+3. AMS verification(spice accurate)
+4. Predicator based TB automated simulation like UVM
+Static
+ - Lint - Identify simple errors in early design cycle
+ - STA - checks timing related problems without user input patterns, faster
+ - Formal - Checks functionality only- (model & equivalence check) - many types one is FPV, mostly check for simple blocks as it require more, 100% theoritically proven
+Hardware  modeling - netlist model simulation
+Emulation - Test the system in a hardware
+Rapid prototyping - FPGA/ASIC test chip
