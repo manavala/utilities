@@ -32,4 +32,96 @@ Slave response with data
 Data channel:
 Both Read data and response from slave to master with 2^3 to 2^10 bits wide
 Keep writing "buffered" data of 2^3 to 2^10 bits width to slave without expecting acknowledge/response. Strobe confirms which "byte" are valid to write. "strobe" required only for write to replace which bits, for read it doesn't matter
+Slaves reponse after write "transaction complete" not for each "data transfer" in a transaction
+
+interface between, master & slave, master & interconnect, slave & interconnect
+also interconnect to interconnect
+
+Topologies:
+1. Shared address and data bus
+2. Shared address and multiple data bus
+3. Multilayer, with multiple address & data buses
+
+Register Slices:
+Insert additional latency at almost any point in any channel
+"To improve efficiency", add registers to store data temporarily
+
+Components:
+Master, Slave(memory/peripheral), Interconnect
+Upstream and Downstream (away from root in Pcie)
+
+required operation set form AXI transaction.
+payload transferred as "AXI burst". Each burst has "multiple data transfer" or "AXI beats"
+
+Global sig: @posedgeclk & reset
+
+WR-ADDR-CH=Prefix "AW"
+AWID - Write address ID - Identification tag for write address group of signals
+AWADDR - Addr of first transfer in burst
+AWLEN - Num of transfers in burst
+AWSIZE - size of each transfer in the burst
+AWBURST - "Burst type"
+AWLOCK - Locked transactions
+AWCACHE - (Memory Type) - how to pass through a system?
+AWPROT - security
+AWQOS - Quality of Service
+AWREGION - "to identify region" permits a single physical interface to be used for multiple logical interfaces
+AWUSER - User' signal
+AWVALID - Address valid
+AWREADY - from slave to master, tells whether it can accept or not
+
+WR-DATA-CH=Prefix "W"
+WID - ID tag - only AXI3
+WDATA - Write data
+WSTRB - indicates which bytes are valid
+WLAST - indicates last transfer in a write burst
+WUSER - USer's
+WVALID - indicates data & strobes are valid
+WREADY - from slave to master, tells whether it can accept or not
+for read "RRESP" is the only addition, other than this both "addr" & "data" all signal are common for both Write and read channels
+
+WR-RESP-CH=Prefix "B"
+BID - Response ID tag
+BRESP - Write response
+BUSER - User signal
+BVALID - indicates response is valid
+BREADY - from master to slave, tells whether it can accept or not
+
+Low - power interface signals
+CSYSREQ - request from system clk ctlr to peripheral to exit low power state
+CSYSACK - ack from peripheral to system that it had exited from low power
+CACTIVE - request from peripheral to system that it needs clock
+
+Reset operations:
+master drive, ARVALID, AWVALID, WVALID Low
+slave drive RVALID, BVALID Low
+
+Source not permitted to wait for READY to assert Valid
+Dest    is permitted to wait for Valid to assert before asserting its Ready
+Ready can be enabled before Valid is asserted
+Can Error: Once Valid is asserted must remain asserted until Ready and VALID are high at same clock edge
+Can Error: Shouldn't cross 4KB boundary
+
+if INCR == burst type & AXI4 : 
+	AxLen = 1 to 256
+else
+	AxLen = 1 to 16
+	if WRAP == burst type:
+		AxLen = 2,4,8 or 16
+
+Early termination of bursts is not supported. If you can't control the burst and if you want to disable the burst, just fix the strobes to zeros for unwanted writes.
+
+Bytes per transfer/beat in burst is AxSize[2:0] = 2^value_on_signal. 1 to 128 bytes = 1024 bits width.
+
+Burst type: 
+Fixed = Address always same. application: loading /emptying a fifo, polling, etc
+INCR: just incrment next address based on size&address of previous transfer. application: sequential memory
+WRAP: application: cache line access
+	start address must be aligned to size of each transfer
+forever begin:
+	if(wrap&valid)
+		if(size_of_transfer*number_of_tranfers) in the burst
+			reset current_address = init address;
+		else INCR address;
+end
 
