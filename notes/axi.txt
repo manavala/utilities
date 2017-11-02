@@ -31,5 +31,5 @@ Slave response with data
 
 Data channel:
 Both Read data and response from slave to master with 2^3 to 2^10 bits wide
-Keep writing "buffered" data of 2^3 to 2^10 bits width to slave without expecting acknowledge/response. Strobe confirms which "byte" are valid to write
+Keep writing "buffered" data of 2^3 to 2^10 bits width to slave without expecting acknowledge/response. Strobe confirms which "byte" are valid to write. "strobe" required only for write to replace which bits, for read it doesn't matter
 
