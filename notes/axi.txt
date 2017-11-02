@@ -1,0 +1,35 @@
+AXI is for:
+high BW without bridges
+meets interface requirements for wide range of componenets like USB,PCIe, UART,I2C, etc
+suitable for memory controllers initial high access latency
+Flexibility for inteconnect
+Backward compatible for APB, AHB
+
+Features:
+separate address/control and data phases
+unaligned data transfers - using stroes
+just start address with burst of transfers
+separate Rd & Wr data channels for DMA
+out-of-order cause of multiple outstanding
+"permits easy addition of register stages t provide timing closure" - no idea
+
+"independant" Channels:
+Read address
+Read data
+Write address
+Write data
+Write response
+
+Master Writes Address and Data to Slave
+Slave Response to Master
+Master request Data for some address to Slave
+Slave response with data
+
+"Transaction" is valid if "valid" is high
+"Transaction" is accepeted only if "ready" to accept
+"Last" signal only in Write/Read "Data" channels
+
+Data channel:
+Both Read data and response from slave to master with 2^3 to 2^10 bits wide
+Keep writing "buffered" data of 2^3 to 2^10 bits width to slave without expecting acknowledge/response. Strobe confirms which "byte" are valid to write
+
