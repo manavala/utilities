@@ -125,3 +125,28 @@ forever begin:
 		else INCR address;
 end
 
+OKAY- Everything normal, exclusive fail, exclusive fail to slave which doesn't support exclusive access
+EXOKAY - Ex access is success
+SLVERR - Access reached slave sucessfully, but it replied as err
+ if fifo/buffer under or overrun
+    unsupported transfer size attempted
+    Write to read-only location
+    timout from slave
+    access to disabled/power-down function
+DECERR - Typically by interconnect says cann't find slave with requested transaction address
+
+Caution: either for SLVERR/DECERR, error detected at first or just before last, don't truncate sending read data, must complete
+
+if Memory Slave - Should handle all transaction types
+if Peripheral Slave - It is Implementation Specific
+
+AxCache[3:0] - Bufferable,Cacheable,ReadAllocable,WriteAllocable or not
+Bufferabel - don't send immediately- just hold for certain number of cycles before reaching slave ( mostly writes)
+Cacheable -
+	if de asserted- transaction is forbidden
+	if asserted - than transaction is permitted
+		- final need not as origianl, can get merged for writes, can get prefetched for reads
+
+Read-allocate bit -only if cacheable - good if read allocated not mandatory
+Write-allocate bit - -only if cacheable - good if write allocated not mandatory
+
