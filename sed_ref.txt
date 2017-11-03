@@ -61,3 +61,6 @@ sed 's/<expression>/<replacement>/gp;d' file
 
 ##just inversion
 sed '/#/! s/^/  /'
+
+##awk to add and print the arguments
+awk '{ sum+=$1 ; print sum }'
