@@ -1,0 +1,20 @@
+Youtube "The ARM University Program, ARM Architecture Fundamentals"
+
+1. From the arm only the Debug port is visible
+2. cores takes only two interrupt inputs
+3. so the most common periperhal connected will be interrupt controller
+4. within the device components are connected together with the arm on-chip interconnect bus architecture
+5. It can have all the bus types like AXI (sometimes AHB) for high performance and APB for low power peripherals
+6. Generally AXI will be for the Memory and high-speed devices
+7. A8 - 13 stage pipeline
+8. A9 -  8 stage pipeline
+
+v7:
+1. Memory Management Support (MMU) - virtual memory system to support Linux
+2. Security extensions like payment
+3. 40 bit physical address
+4. Hardware virtualization
+
+Risc architecture:
+1. Load store architecture - can directly deal with the memory
+2. 
