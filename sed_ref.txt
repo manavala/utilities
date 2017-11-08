@@ -64,3 +64,6 @@ sed '/#/! s/^/  /'
 
 ##awk to add and print the arguments
 awk '{ sum+=$1 ; print sum }'
+
+##print only first arg
+awk '{print $1}'
