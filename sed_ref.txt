@@ -53,7 +53,7 @@ sed '/^\s$/d/'
 ... | tr -s ' '
 
 ## first search and apply replace string for different rule on same line
-sed '/str1 s/$/end/' ## search for str1 and then insert at end of line
+sed '/str1/ s/$/end/' ## search for str1 and then insert at end of line
 
 #inversion , delete
 sed '/<expression>/!d;s//<replacement>/g' file
