@@ -67,3 +67,9 @@ awk '{ sum+=$1 ; print sum }'
 
 ##print only first arg
 awk '{print $1}'
+
+
+#print particular line
+  str=$(sed  "$cnt!d" temp)
+  str=$(sed -n "$cnt"p temp)
+  echo $str
