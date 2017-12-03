@@ -15,6 +15,8 @@ program top;
   
   initial begin
     t1=new();
+    //$display(t1.randomize(a)); //randomize' arguement takes class' varibale and
+    //randomize it explicitly whether the variable is declared as random or not
     $display(t1.randomize());
     $display(t1.a);
   end
