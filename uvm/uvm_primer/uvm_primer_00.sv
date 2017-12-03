@@ -2,7 +2,7 @@ class rectangle;
   int length;
   int width;
 
-  //If function new is modified, child should have and call this constructor
+  //If function new argument is modified, child should have and call this constructor
   function new(int l, int w);
     length=l;
     width=w;
@@ -16,6 +16,8 @@ endclass
 
 class square extends rectangle;
 
+  //If new function argument is not used, automatically "super.new" will be called
+  //if argumented, should fullfill argument requirements
   function new(int s);
     super.new(.l(s),.w(s));
   endfunction
