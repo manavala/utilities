@@ -26,3 +26,19 @@ module arr;
   end
   
 endmodule
+
+logic [8:0] variable  = 10;
+struct packed {
+ logic a;
+ byte c;
+} struct_packed;
+//legal , as the struct becomes the single vector using the keyword "packed"
+// the memory allocation for the packed will happen " 8:7:6:5:4:3:2:1:0 " continously
+struct_packed = variable ;
+struct {
+ logic a;
+ byte c;
+} struct_unpacked;
+// the memory allocation for the packed will not happen " 8:x:x:x:x:7:6:5:4:3:2:1:0 " continously
+//below assignment is illegal and will give compile error
+//struct_unpacked = variable ;
