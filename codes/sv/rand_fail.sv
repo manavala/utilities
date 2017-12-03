@@ -7,6 +7,11 @@ class test;
   //if constraints condition fails for the varaible value, the "randomize" function also fails
   constraint constr_a { a>10; };
 
+  //randomize is "built-in" function modify will return compile error
+  //function int randomize();
+  //  $display("%m");
+  //endfunction
+  
 endclass
 
 program top;
