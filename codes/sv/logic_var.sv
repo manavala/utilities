@@ -1,4 +1,4 @@
-program test;
+module test;
 
   //logic variable
   //at same time, if two drivers writes to logic, only last assignment wins
@@ -8,20 +8,26 @@ program test;
   logic a=0;
   reg b=0;
   wire c=0;
-  
+
   assign c = 0;
   assign c = 1;
 
   initial begin
+    #1;
     a=0;
-    b=0;
   end
-  
-  initial begin
-    a=1;
-    b=1;
-  end
-  
-  initial #1 $display("a=%0d b=%0d c=%0d" ,a,b,c);
 
-endprogram
+  initial begin
+    #1;
+    a=1;
+  end
+
+  always@(*) b=1;
+  always@(*) b=0;
+
+  initial #1 begin
+    $display("a=%0d b=%0d c=%0d" ,a,b,c);
+    $finish;
+  end
+
+endmodule 
