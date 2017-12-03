@@ -42,3 +42,9 @@ struct {
 // the memory allocation for the packed will not happen " 8:x:x:x:x:7:6:5:4:3:2:1:0 " continously
 //below assignment is illegal and will give compile error
 //struct_unpacked = variable ;
+
+
+//wire single continous assignment, if two drives with different values then output is x
+//in tri, if en is high, output is same as input. if en is low, output is z for whatever input is
+//wor, trior, if any 1 input is 1, output is 1
+//wand,triand, if any input is 0, output is 0
