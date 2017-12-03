@@ -21,5 +21,7 @@ program test;
     a=1;
     b=1;
   end
+  
+  initial #1 $display("a=%0d b=%0d c=%0d" ,a,b,c);
 
 endprogram
