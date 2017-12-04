@@ -37,6 +37,10 @@ typedef uvm_sequencer #(seq_item) sequencer;
 ** driver:  protocol specific of dut, directly talks with dut with 
 **          virtual (pointer) interface
 *******************************************************************/
+//class is dynamic, module, interface are static
+//cannot instantiate module and interface in class
+//can pass the interface's pointer inside the class using the keyword "virtual"
+//if interface is instantiated without virtual keyword, will give compile error.
 class drv extends uvm_driver #(seq_item);
   `uvm_component_utils(drv);
   function new(string name, uvm_component parent=null);
