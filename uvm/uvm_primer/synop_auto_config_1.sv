@@ -13,9 +13,12 @@
 //vcs -R -sverilog config_test.sv +UVM_TESTNAME=test +uvm_set_config_int=uvm_test_top.env_0,a,5 +uvm_set_config_string=uvm_test_top.env_0,color,blue -ntb_opts uvm
 //vcs -R -sverilog config_test.sv +UVM_TESTNAME=test +uvm_set_config_int=uvm_test_top,a,5 +uvm_set_config_string=uvm_test_top,color,blue -ntb_opts uvm
 
-
+//Cadence 
+//irun -uvm auto_config.sv +uvm_config_set_int=uvm_test_top,a,4 +uvm_config_set_string=uvm_test_top,color,blue +UVM_TESTNAME=test
+//irun -uvm auto_config.sv +uvm_config_set_int=uvm_test_top.env_0,a,4 +uvm_config_set_string=uvm_test_top.env_0,color,blue +UVM_TESTNAME=test
 
 //synopsys hierarchical-testbench-configuration-using-uvm.pdf
+//EDA playground
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"
