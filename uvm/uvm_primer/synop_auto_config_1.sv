@@ -9,6 +9,12 @@
 // vsim -voptargs="+acc" -c top +UVM_TESTNAME=test  +uvm_set_config_int=uvm_test_top,a,4 -do 'run -all; exit' +uvm_set_config_string=uvm_test_top,color,blue^C
 
 
+//VCS:
+//vcs -R -sverilog config_test.sv +UVM_TESTNAME=test +uvm_set_config_int=uvm_test_top.env_0,a,5 +uvm_set_config_string=uvm_test_top.env_0,color,blue -ntb_opts uvm
+//vcs -R -sverilog config_test.sv +UVM_TESTNAME=test +uvm_set_config_int=uvm_test_top,a,5 +uvm_set_config_string=uvm_test_top,color,blue -ntb_opts uvm
+
+
+
 //synopsys hierarchical-testbench-configuration-using-uvm.pdf
 
 import uvm_pkg::*;
