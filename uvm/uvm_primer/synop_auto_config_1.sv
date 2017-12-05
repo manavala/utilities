@@ -97,7 +97,14 @@ module top;
     //with the same variables that are used with super.build_phase
     //set_config_int("*","a",4);
     //set_config_string("*","color","blue");
+    //To modify only uvm_test_top
+    //set_config_int("uvm_test_top","a",4);
+    //set_config_string("uvm_test_top","color","blue");
+    //To modify only uvm_eng
+    //set_config_int("uvm_test_top.env_0","a",4);
+    //set_config_string("uvm_test_top.env_0","color","blue");
     run_test();
     $finish;
   end
 endmodule 
+ 
