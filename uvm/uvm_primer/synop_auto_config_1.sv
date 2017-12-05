@@ -87,6 +87,8 @@ endclass
 module top;
   initial begin
     //comment below two lines if using from command line
+    //Below two lines modifies for all ** uvm component classes that are factory registered uvm_feild_* for below macros
+    //with the same variables that are used with super.build_phase
     //set_config_int("*","a",4);
     //set_config_string("*","color","blue");
     run_test();
