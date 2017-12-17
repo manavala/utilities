@@ -1,0 +1,92 @@
+
+//http://www.learnuvmverification.com/index.php/2015/10/28/uvm-driver-use-models-part-2/
+
+Driver transaction types:
+
+1. Unidirectional Non-pipelined
+  Just sequencer to driver only
+  @sequener             @driver
+  wait_for_grnt()       get_next_item()
+  wait_for_item_done()  drive()
+                        item_done()
+  finish_tem()
+again  wait_for_grnt()
+
+2. Bidirectional Non-pipelined
+  Update the "req" field in driver before calling "item_done()"
+  after "finish_item(req)" in sequence, read response/updated req data
+
+3. Pipelined
+  class ahb_pipelined_driver extends uvm_driver #(ahb_seq_item);
+  /// Semaphore Declaration
+
+  //lock the phase during first phase
+  //after complete first phase, address phase
+  //release the lock as it is pipeline for the second task and but first task continue to second phase
+  //second task catch the semaphore and perform the first phase (address phase) and release the lock by \
+  that time first task would have comleted it's second phase and takes the semaphore and continue to first\
+  phase of its next task
+
+  semaphore pipeline_lock = new(1);
+  task run_phase (uvm_phase phase);
+ 
+    @(posedge ahb_if.HRESETn);
+    @(posedge ahb_if.HCLK);
+ 
+    fork
+      do_pipelined_transfer; //each handle completes two phases (addr and data)
+      do_pipelined_transfer;
+    join
+    endtask
+
+   /// do_pipelined_transfer task
+   task automatic do_pipelined_transfer;
+    forever begin
+      semphore_h.get();
+      seq_item_port.get(req);
+      accept_tr(req,$time);
+      void'(begin_tr(req,"pipelined driver");
+      send first phase data;
+      wait for one clk & also for ready.
+      release lock (semaphore_h.put()) for another thread
+      proceed for data phase
+      wait for 1 clk
+      seq_item_port.put(req)
+      end_tr(req)
+    end//forever
+   endtask
+   endclass
+
+   class ahb_pipelined_seq extends uvm_sequence  #(ahb_seq_item);
+   logic [31:0] addr[10];
+    task body;
+      ahb_seq_item req;
+      req = ahb_seq_item::type_id::create("req", this);
+      use_response_handler(1); // to trigger the response in another function
+      count = 0;// to count the response
+      //10 writes and 10 reads
+  
+      for(int i=0; i<10; i++) begin
+        start_item(req);
+        assert(req.randomize() with {HWRITE == 1; HBURST == SINGLE; HADDR inside {[32'h0010_1000:32'h0010_1FFC]};});
+        addr[i] = req.HADDR;
+        finish_item(req);
+      end
+
+      foreach (addr[i]) begin
+        start_item(req);
+        req.HADDR = addr[i];
+        req.HWRITE = 0;
+        finish_item(req);
+      end
+      // Wait till last seq item is over
+      wait(count == 20);//controls the simulation
+    endtask
+
+    // This response_handler function is enabled to keep the sequence response FIFO empty
+   function void response_handler(uvm_sequence_item response);
+     count++;
+   endfunction: response_handler
+
+   endclass
+                   
