@@ -5,6 +5,7 @@
 class trans extends uvm_component;
   `uvm_component_utils(trans)
   uvm_put_port #(int) put_port;
+  //uvm_put_port or uvm_blocking_put_port
 
   function new(string name,uvm_component parent=null);
     super.new(name,parent);
@@ -27,7 +28,9 @@ endclass
 class drv extends uvm_driver;
   `uvm_component_utils(drv)
 
+  //default paramter is int type
   uvm_get_port #(int) get_port;
+  //uvm_get_port or uvm_blocking_get_port
 
   function new(string name, uvm_component parent=null);
     super.new(name,parent);
