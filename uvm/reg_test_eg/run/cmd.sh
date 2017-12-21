@@ -1,6 +1,6 @@
 #!/bin/sh
 
-UVM_HOME="/home/mana/Desktop/uvm-1.2/"
+UVM_HOME="/..//uvm-1.2/"
 
 vcs -sverilog -timescale=1ns/1ns +acc +vpi -debug_access+all -lca \
 +incdir+$UVM_HOME/src $UVM_HOME/src/uvm.sv $UVM_HOME/src/dpi/uvm_dpi.cc -CFLAGS -DVCS \
