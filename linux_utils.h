@@ -166,12 +166,14 @@ awk 'END{print}; ( ( $1 < 129 && $2 < 500) || ( $1 > 128 && $2 > 500 && $2 < 200
 
   
  #Ghost script to reduce the pdf size
- gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook     -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages     -dCompressFonts=true -r150 -sOutputFile=out.pdf in.pdf
+ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook     -dNOPAUSE -dQUIET -dBATCH \
+ -dDetectDuplicateImages     -dCompressFonts=true -r150 -sOutputFile=out.pdf in.pdf
  -dPDFSETTINGS=/screen lower quality, smaller size.
 -dPDFSETTINGS=/ebook for better quality, but slightly larger pdfs.
 -dPDFSETTINGS=/prepress output similar to Acrobat Distiller "Prepress Optimized" setting
 -dPDFSETTINGS=/printer selects output similar to the Acrobat Distiller "Print Optimized" setting
--dPDFSETTINGS=/default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file
+-dPDFSETTINGS=/default selects output intended to be useful across a wide variety of uses, possibly \
+at the expense of a larger output file
 
 ## merge /join 2 half into 1 full size eg: a5+a5=a4 , horizontal
 pdfjam a5_1.pdf a5_2.pdf  --nup 1x2  --outfile a4.pdf
@@ -181,3 +183,8 @@ pdfjam Page1.pdf Page2.pdf --nup 2x1 --landscape --outfile Page1+2.pdf
 #rotate and save the pdf
 pdftk temp1.pdf cat 1-endnorth output 1.pdf;
 #north (rotation)-> south,east,west,right,left,down
+
+#resize to a4
+> pdfinfo in.pdf 
+> pdfjam --outfile out.pdf --paper a4paper in.pdf
+> pdfinfo out.pdf 
