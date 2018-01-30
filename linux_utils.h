@@ -188,3 +188,16 @@ pdftk temp1.pdf cat 1-endnorth output 1.pdf;
 > pdfinfo in.pdf 
 > pdfjam --outfile out.pdf --paper a4paper in.pdf
 > pdfinfo out.pdf 
+
+
+#Color to grey pdf
+
+gs \
+ -sOutputFile=output.pdf \
+ -sDEVICE=pdfwrite \
+ -sColorConversionStrategy=Gray \
+ -dProcessColorModel=/DeviceGray \
+ -dCompatibilityLevel=1.4 \
+ -dNOPAUSE \
+ -dBATCH \
+ input.pdf
