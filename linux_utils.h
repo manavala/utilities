@@ -201,3 +201,6 @@ gs \
  -dNOPAUSE \
  -dBATCH \
  input.pdf
+
+#download mp4 format youtube
+youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' url
