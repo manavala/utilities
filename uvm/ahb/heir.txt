@@ -1,0 +1,55 @@
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               incrx_test              -     @463 
+  env_h                    ahb_env                 -     @477 
+    ahb_coverage_h         ahb_coverage            -     @559 
+      analysis_imp         uvm_analysis_imp        -     @567 
+    ahb_master_ap          uvm_analysis_port       -     @485 
+    ahb_slave_ap           uvm_analysis_port       -     @494 
+    master_agent_h         ahb_magent              -     @525 
+      agent_ap             uvm_analysis_port       -     @533 
+      mdriver_h            ahb_mdriver             -     @726 
+        rsp_port           uvm_analysis_port       -     @743 
+        seq_item_port      uvm_seq_item_pull_port  -     @734 
+      mmonitor_h           ahb_mmonitor            -     @709 
+        monitor_ap         uvm_analysis_port       -     @717 
+      mseqr_h              ahb_mseqr               -     @752 
+        rsp_export         uvm_analysis_export     -     @760 
+        seq_item_export    uvm_seq_item_pull_imp   -     @866 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    reset_agent_h          reset_agent             -     @517 
+      driver_h             reset_driver            -     @886 
+        rsp_port           uvm_analysis_port       -     @903 
+        seq_item_port      uvm_seq_item_pull_port  -     @894 
+      reset_seqr_h         reset_seqr              -     @912 
+        rsp_export         uvm_analysis_export     -     @920 
+        seq_item_export    uvm_seq_item_pull_imp   -     @1026
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    slave_agent_h          ahb_sagent              -     @542 
+      agent_ap             uvm_analysis_port       -     @550 
+      sdriver_h            ahb_sdriver             -     @1063
+        rsp_port           uvm_analysis_port       -     @1080
+        seq_item_port      uvm_seq_item_pull_port  -     @1071
+      smonitor_h           ahb_smonitor            -     @1046
+        monitor_ap         uvm_analysis_port       -     @1054
+      sseqr_h              ahb_sseqr               -     @1089
+        rsp_export         uvm_analysis_export     -     @1097
+        seq_item_export    uvm_seq_item_pull_imp   -     @1203
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    vseqr_h                ahb_vseqr               -     @576 
+      rsp_export           uvm_analysis_export     -     @584 
+      seq_item_export      uvm_seq_item_pull_imp   -     @690 
+      arbitration_queue    array                   0     -    
+      lock_queue           array                   0     -    
+      num_last_reqs        integral                32    'd1  
+      num_last_rsps        integral                32    'd1  
