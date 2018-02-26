@@ -66,4 +66,9 @@ p4 revert
 #Steps to discard/resolve with conflicts
 #backup all the changes
 P4 revert all files in the changelist
+p4 sync to latest files
 p4 change -d change-number
+p4 edit all the files
+apply the changes
+p4 submit
+
