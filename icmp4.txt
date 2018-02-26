@@ -61,3 +61,6 @@ p4 revert
 
 #to compare directory files are checkedin or not
 #p4 unmanaged - . --> '.' current directory
+
+#to remove the changelist
+p4 change -d change-number
