@@ -63,4 +63,7 @@ p4 revert
 #p4 unmanaged - . --> '.' current directory
 
 #to remove the changelist
+#Steps to discard/resolve with conflicts
+#backup all the changes
+P4 revert all files in the changelist
 p4 change -d change-number
