@@ -3,7 +3,7 @@
 -- hello_world.vhdl  Just output to the screen
 --                   This should be independent of whose VHDL you use
 --                   When using some vendors GUI, you have a learning curve
---                   Using porta--in questa, vcom file_name; vsim -c top_entity_name -do 'run -all; exit'ble VHDL, it will run on all vendors
+--                   Using portable VHDL, it will run on all vendors
 --                   with implementations conforming to IEEE Std. 1076-1993
 
 
