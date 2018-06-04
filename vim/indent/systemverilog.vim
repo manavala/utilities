@@ -6,7 +6,7 @@ let b:did_indent = 1
 " set nocindent
 
 setlocal indentexpr=GetSVIndent()
-setlocal indentkeys=0{,0},0#,!^F,o,O,e,=begin,=end,=endclass,=endprogram,=endfunction,=endtask,=endcase,=else,=endpackage,=endmodule,=endinterface,=endproperty,=endgroup,=endextends,=endclocking,=endgenerate,=endchecker,=join,=`else,=`endif,=`uvm_component_utils_end,=`uvm_object_utils_end
+setlocal indentkeys=0{,0},0#,!^F,o,O,e,=begin,=end,=endclass,=endprogram,=endfunction,=endtask,=endcase,=else,=endpackage,=endmodule,=endinterface,=endproperty,=endgroup,=endextends,=endclocking,=endgenerate,=endchecker,=join,=`else,=`endif,=`uvm_component_utils_end,=`uvm_object_utils_end,=endsequence
 setlocal cinoptions=:0.5s,(0,=0.5s
 " setlocal cinoptions=:0.5s,(0,=0.5s,+15
 
@@ -171,7 +171,7 @@ function! GetSVIndent()
          return indent(line)
       endif
       return indent(prev.line)
-   elseif (!empty(prev.str) && prev.str !~ '\(;\|}\)' && prev.str !~ '^\s*\(end\|endfunction\|endtask\|endclass\|endmodule\|endinterface\|endcase\|endgroup\|endclocking\|endgenerate\|endextends\|endprogram\|fork\|join_any\|join\|`include\|`define\)\>' && prev.str !~ '^\s*//')
+   elseif (!empty(prev.str) && prev.str !~ '\(;\|}\)' && prev.str !~ '^\s*\(end\|endfunction\|endtask\|endclass\|endmodule\|endsequence\|endproperty\|endinterface\|endcase\|endgroup\|endclocking\|endgenerate\|endextends\|endprogram\|fork\|join_any\|join\|`include\|`define\)\>' && prev.str !~ '^\s*//')
       " echom v:lnum "line continuation"
       return indent(prev.line) + &sw
    elseif prev.str =~ '^\s*`'
