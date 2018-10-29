@@ -58,3 +58,6 @@ git ls-remote --heads origin
 
 #to see the modified files
 git status
+
+#to see the changes with git repository 
+git diff filename with repo path
