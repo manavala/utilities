@@ -22,12 +22,14 @@ git config --global pull.rebase true
 
 #usual steps
 git init
+git remote add origin <server>
 git remote add [remote_name] [url]. #For ex. $ git remote add adhoc-dev git@github.com:adhoc-dev/odoo-infrastructure.git
 git pull origin master
 
 #steps to add the file
 git add filename
 git commit -m "message"
+git push origin master
 
 #Set default diffs:
 #per branch or master
