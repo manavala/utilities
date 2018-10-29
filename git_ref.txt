@@ -38,3 +38,8 @@ git config merge.tool tkdiff
 #per linux account
 git config --global diff.tool tkdiff
 git config --global merge.tool tkdiff
+
+#discard single file changes
+git checkout filename
+git reset --hard HEAD~1
+
