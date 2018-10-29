@@ -45,3 +45,11 @@ git reset --hard HEAD~1
 
 #show global config list
 git config --list
+
+#git branch commands
+git remote show origin
+git branch -a
+git branch -r
+git branch
+git ls-remote
+git ls-remote --heads origin
