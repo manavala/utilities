@@ -16,6 +16,7 @@ ssh-keygen -t rsa -C "your.email@example.com"
 #initial setup
 git config --global user.name "Mana Venug" 
 git config --global user.email mana.venu@example.com 
+git config --global color.ui auto
 
 #if rebase need set to be default
 git config --global pull.rebase true
