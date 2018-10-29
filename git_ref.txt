@@ -43,3 +43,5 @@ git config --global merge.tool tkdiff
 git checkout filename
 git reset --hard HEAD~1
 
+#show global config list
+git config --list
