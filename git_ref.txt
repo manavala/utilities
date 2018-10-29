@@ -10,11 +10,29 @@ git apply patch.txt
 #to copy changes between two commits
 git diff old_commit_hash new_commit_hash >patch.txt
 
+#keygen creation
+ssh-keygen -t rsa -C "your.email@example.com"
 
 #initial setup
+git config --global user.name "Mana Venug" 
+git config --global user.email mana.venu@example.com 
 
+#if rebase need set to be default
+git config --global pull.rebase true
 
 #usual steps
 git init
 git remote add [remote_name] [url]. #For ex. $ git remote add adhoc-dev git@github.com:adhoc-dev/odoo-infrastructure.git
 git pull origin master
+
+#steps to add the file
+git add filename
+git commit -m "message"
+
+#Set default diffs:
+#per branch or master
+git config diff.tool tkdiff
+git config merge.tool tkdiff
+#per linux account
+git config --global diff.tool tkdiff
+git config --global merge.tool tkdiff
