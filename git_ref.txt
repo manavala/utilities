@@ -9,3 +9,12 @@ git apply patch.txt
 
 #to copy changes between two commits
 git diff old_commit_hash new_commit_hash >patch.txt
+
+
+#initial setup
+
+
+#usual steps
+git init
+git remote add [remote_name] [url]. #For ex. $ git remote add adhoc-dev git@github.com:adhoc-dev/odoo-infrastructure.git
+git pull origin master
