@@ -24,8 +24,13 @@ git config --global pull.rebase true
 #usual steps
 git init
 git remote add origin <server>
+# todebug
+git remote show origin
+#to change
 git remote rename origin ??
+#to remove
 git remote remove origin ??
+#eg
 git remote add [remote_name] [url]. #For ex. $ git remote add adhoc-dev git@github.com:adhoc-dev/odoo-infrastructure.git
 git pull origin master
 
