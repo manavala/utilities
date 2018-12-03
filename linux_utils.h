@@ -204,3 +204,16 @@ gs \
 
 #download mp4 format youtube
 youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' url
+
+
+#to replace the pages
+pdftk A=new.pdf B=3.pdf C=11.pdf D=14.pdf cat A1-2 B1 A4-10 C1 A12-13 D1 A15-20 output out.pdf
+#portrait to landscape
+pdftk out.pdf cat 1-endnorth output lat.pdf
+#split the pages
+for i in {1..20}; do pdftk lat.pdf cat $i output ${i}.pdf; done
+#two a5 into a4
+for i in {0..9}; do j=$((i*2+1)); k=$((i*2+2)); l=$((i+1)); pdfjam $j.pdf $k.pdf --nup 1x2 --outfile lat_${l}.pdf  ; done
+ls lat_*.pdf
+#final
+pdftk lat_1.pdf  lat_2.pdf  lat_3.pdf  lat_4.pdf  lat_5.pdf  lat_6.pdf  lat_7.pdf  lat_8.pdf  lat_9.pdf lat_10.pdf output merged.pdf
