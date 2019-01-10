@@ -77,3 +77,6 @@ git branch
 git pull
 #push branch
 git push -u origin feature_branch_name
+
+#see modified files list onlyu
+git ls-files -m
