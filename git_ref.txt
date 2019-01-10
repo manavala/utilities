@@ -67,3 +67,13 @@ git status
 
 #to see the changes with git repository 
 git diff filename with repo path
+
+
+#pull branch
+git checkout -b feature_branch_name
+#check branch
+git branch
+#update branch
+git pull
+#push branch
+git push -u origin feature_branch_name
