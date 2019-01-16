@@ -14,3 +14,9 @@ vncserver -geometry 1600x1140 -randr 800x600,1024x768,1152x864,1280x720,1280x102
 
 ## for two monitors with 1920x1080 support
 3840x1080,3840x1020
+
+## if Unrecognized option: -randr
+~]$ cvt 3840 1020
+~]$ xrandr --newmode "3840x1020_60.00"  326.00  3840 4080 4488 5136  1020 1023 1033 1058 -hsync +vsync
+~]$ xrandr --addmode default "3840x1020_60.00" ## default is the display name showed for the command "xrandr"
+~]$ xrandr
