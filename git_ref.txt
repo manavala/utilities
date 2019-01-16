@@ -70,6 +70,7 @@ git diff filename with repo path
 
 
 #pull branch
+git fetch origin
 git checkout -b feature_branch_name
 #check branch
 git branch
