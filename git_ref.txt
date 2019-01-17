@@ -94,3 +94,9 @@ git rebase origin/master
 then "git pull"
 to get the latest changes of the master
 if merge error, modify the file, git add git commit, git push to the branch
+
+
+
+
+##git pull = git fetch + git merge
+##git pull --rebase = git fetch + git rebase
