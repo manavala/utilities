@@ -82,6 +82,7 @@ git push -u origin feature_branch_name
 #see modified files list onlyu
 git ls-files -m
 
+#alway have a backup of the branch before starting the rebase
 #steps to update the branch and rebase with master
 git fetch
 git rebase origin/master
@@ -90,3 +91,6 @@ git rebase origin/master
   git add that conflict file name
   git rebase --continue
 #should be clean now
+then "git pull"
+to get the latest changes of the master
+if merge error, modify the file, git add git commit, git push to the branch
