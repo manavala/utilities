@@ -217,3 +217,7 @@ for i in {0..9}; do j=$((i*2+1)); k=$((i*2+2)); l=$((i+1)); pdfjam $j.pdf $k.pdf
 ls lat_*.pdf
 #final
 pdftk lat_1.pdf  lat_2.pdf  lat_3.pdf  lat_4.pdf  lat_5.pdf  lat_6.pdf  lat_7.pdf  lat_8.pdf  lat_9.pdf lat_10.pdf output merged.pdf
+
+
+# download mp3 from youtube
+youtube-dl -x -f bestaudio --audio-quality 0 --audio-format mp3 -k https://www.youtube.com/watch?v=
