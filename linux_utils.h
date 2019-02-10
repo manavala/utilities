@@ -221,3 +221,9 @@ pdftk lat_1.pdf  lat_2.pdf  lat_3.pdf  lat_4.pdf  lat_5.pdf  lat_6.pdf  lat_7.pd
 
 # download mp3 from youtube
 youtube-dl -x -f bestaudio --audio-quality 0 --audio-format mp3 -k https://www.youtube.com/watch?v=
+# download playlist
+youtube-dl -i -f mp4 --yes-playlist https://www.youtube.com....  playlist_url
+or
+youtube-dl -i PLwJ2VKmefmx...playlist_ID
+#best mp4
+by default it picks up the latest
