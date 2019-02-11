@@ -14,15 +14,6 @@ def func2(a,b):
   time.sleep(delay)
   print ('func2: finishing ',delay)
 
-def runInParallel(*fns):
-  proc = []
-  for fn in fns:
-    p = Process(target=fn)
-    p.start()
-    proc.append(p)
-  for p in proc:
-    p.join()
-
 def run(run_list):
   proc_list = []
   for ii in run_list:
