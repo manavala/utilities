@@ -1,0 +1,5 @@
+alias vi 'vimx $argv'
+alias vim 'vimx $argv'
+alias grep 'grep --color=always $argv'
+alias ls 'ls --color=auto'
+alias precmd 'echo -n "\033]0;`echo ${PWD}`\a"'
