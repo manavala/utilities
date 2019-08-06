@@ -72,3 +72,12 @@ p4 edit all the files
 apply the changes
 p4 submit
 
+
+#To revert the files
+p4 revert ... 
+
+#To force sync the files
+p4 sync -f ...
+
+#to configure the tkdiff to perforce, run p4 info on any folder
+setenv P4CLIENT `p4 info | grep -o 'Client name: .*' | sed 's/Client name: //'`
