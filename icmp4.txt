@@ -81,3 +81,13 @@ p4 sync -f ...
 
 #to configure the tkdiff to perforce, run p4 info on any folder
 setenv P4CLIENT `p4 info | grep -o 'Client name: .*' | sed 's/Client name: //'`
+
+#To shelve for review
+p4 shelve
+
+#To update shelved files, if files modiifed after shelving
+p4 shelve -c #changelist
+
+#To commit shelved fils # find changelist from "p4 opened"
+p4 shelve -c #changelist -d #deltes the shelve, can revert after this if not required for checkin
+p4 submit -c #changelist
