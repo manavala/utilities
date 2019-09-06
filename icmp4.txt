@@ -86,7 +86,10 @@ setenv P4CLIENT `p4 info | grep -o 'Client name: .*' | sed 's/Client name: //'`
 p4 shelve
 
 #To update shelved files, if files modiifed after shelving
-p4 shelve -c #changelist
+p4 shelve -c #changelist -r
+
+#to edit the changelist, either description or the files editing
+p4 change -u CL_number
 
 #To commit shelved fils # find changelist from "p4 opened"
 p4 shelve -c #changelist -d #deltes the shelve, can revert after this if not required for checkin
