@@ -91,6 +91,9 @@ p4 shelve -c #changelist -r
 #to edit the changelist, either description or the files editing
 p4 change -u CL_number
 
+#list shelves
+p4 changes -u <USERNAME> -s shelved 
+
 #To commit shelved fils # find changelist from "p4 opened"
 p4 shelve -c #changelist -d #deltes the shelve, can revert after this if not required for checkin
 p4 submit -c #changelist
