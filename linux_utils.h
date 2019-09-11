@@ -99,6 +99,9 @@ find ./ -type f -name "\.*sw[klmnop]" -delete
 #to remove duplicate lines in output
 uniq
 
+## append this line after the command in terminal to notify task complete
+notify-send "task completed"
+
 #to change rows to col
 xargs
 tr '\n' ' '
