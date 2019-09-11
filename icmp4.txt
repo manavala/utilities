@@ -92,7 +92,7 @@ p4 shelve -c #changelist -r
 p4 change -u CL_number
 
 #list shelves
-p4 changes -u <USERNAME> -s shelved 
+p4 changes -u <USERNAME> -s shelved  ## can get user name from 'p4 info'
 
 #To commit shelved fils # find changelist from "p4 opened"
 p4 shelve -c #changelist -d #deltes the shelve, can revert after this if not required for checkin
