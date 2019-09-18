@@ -102,3 +102,4 @@ p4 submit -c #changelist
 ## to map new depot to the existing workspace
 p4v -> Connection -> Edit Current workspace
 ==> View workspace mapping as tree, set the path as related to the exisitg tree
+After mapped, "p4 sync ..." from the directory set above
