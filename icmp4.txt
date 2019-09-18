@@ -97,3 +97,8 @@ p4 changes -u <USERNAME> -s shelved  ## can get user name from 'p4 info'
 #To commit shelved fils # find changelist from "p4 opened"
 p4 shelve -c #changelist -d #deltes the shelve, can revert after this if not required for checkin
 p4 submit -c #changelist
+
+
+## to map new depot to the existing workspace
+p4v -> Connection -> Edit Current workspace
+==> View workspace mapping as tree, set the path as related to the exisitg tree
