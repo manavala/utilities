@@ -103,3 +103,6 @@ p4 submit -c #changelist
 p4v -> Connection -> Edit Current workspace
 ==> View workspace mapping as tree, set the path as related to the exisitg tree
 After mapped, "p4 sync ..." from the directory set above
+
+To apply the shelved CL to local ws
+p4 unshelve -s #changelist
