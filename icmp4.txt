@@ -21,6 +21,9 @@ p4 sync -f file_path#Version             ///make sure no spaces in between
 p4 filelog FILENAME
 p4 print FILENAME#VERSION
 
+#Command to download files from one-level folder without workspace
+for _file in $(p4 files //depot/dir/... | awk '{print $1}' | perl -ne '/(.*)#\d+$/ && print "$1\n"'); do p4 print -q $_file > /path/to/target/dir/$(basename $_file); done
+
 #to resolve conflicts
 1. note down "p4 submit -c Commit_ID"
 2. p4 resolve
