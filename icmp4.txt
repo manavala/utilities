@@ -94,6 +94,9 @@ p4 shelve -c #changelist -r
 #to edit the changelist, either description or the files editing
 p4 change -u CL_number
 
+#to add the existing file
+p4 reopen -c CLN FILE ...
+
 #list shelves
 p4 changes -u <USERNAME> -s shelved  ## can get user name from 'p4 info'
 
