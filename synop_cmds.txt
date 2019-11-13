@@ -18,3 +18,9 @@ vcs -R wrklib.test -full64  ## with top module
 
 ## to point the new synopsys_sim.setup
 vcs -sverilog -full64 ../sva_00_imd.sv -kdb -lca -simdir `pwd` ; ./simv
+
+#run dve with gui
+vcs -R -gui -sverilog -ntb_opts uvm top.sv -debug_access+all
+
+#run with verdi gui
+vcs -R -gui=VERDI -sverilog -ntb_opts uvm top.sv -debug_access+all
