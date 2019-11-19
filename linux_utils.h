@@ -234,3 +234,6 @@ by default it picks up the latest
 
 #if xrandr -s 1920x1080 is not working
 xrandr --output DVI-0 --mode 1920x1080
+
+#in bash, remove duplicate lines without sort
+awk '!x[$0]++'
