@@ -24,3 +24,6 @@ vcs -R -gui -sverilog -ntb_opts uvm top.sv -debug_access+all
 
 #run with verdi gui
 vcs -R -gui=VERDI -sverilog -ntb_opts uvm top.sv -debug_access+all
+
+# useful to stop simulation earlier while re-running, if sim exit without properly dumping the waveform
+vcs -sverilog -timescale=1ps/1ps +vcs+stop+10+0 top.sv -ntb_opts uvm
