@@ -237,3 +237,6 @@ xrandr --output DVI-0 --mode 1920x1080
 
 #in bash, remove duplicate lines without sort
 awk '!x[$0]++'
+
+pipe alias output
+alias lm 'ls -l \!* | more
