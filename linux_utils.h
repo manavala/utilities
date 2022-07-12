@@ -240,3 +240,10 @@ awk '!x[$0]++'
 
 pipe alias output
 alias lm 'ls -l \!* | more
+
+  
+ convert 
+ something(0x1200,0xab,0x10,0x02,0x00,0x99,0x5c,0xd3,0xfe,0x0c,0x04,0x04,0xfa,0xf0,0x1e,0xd0,0xec);
+to 
+func('h1800, 32'h000210ab, 4);
+cat filename | grep -i something | sed 's/.*(//' | sed 's/).*//' | sed 's/0x//g' | sed 's/.....//' | sed 's/,//g' | sed "s/.\{8\}/&\n/g" | sed '/^[[:space:]]*$/d' | sed 's/\(.\{2\}\)\(.\{2\}\)\(.\{2\}\)\(.\{2\}\)$/\4\3\2\1/' | awk '{ printf("%x %s\n", NR+6143, $1) }' | sed "s/ /, 32'h/" | sed "s/^/func('h/" | sed 's/$/, 4);/' | tee temp.txt
